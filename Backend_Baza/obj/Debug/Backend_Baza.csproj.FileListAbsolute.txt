@@ -1,0 +1,12 @@
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\Backend_Baza.dll.config
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\Backend_Baza.dll
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\Backend_Baza.pdb
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\EntityFramework.dll
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\EntityFramework.xml
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\obj\Debug\Backend_Baza.csproj.AssemblyReference.cache
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\obj\Debug\Backend_Baza.csproj.CoreCompileInputs.cache
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\obj\Debug\Backend_Baza.csproj.CopyComplete
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\obj\Debug\Backend_Baza.dll
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Backend_Baza\obj\Debug\Backend_Baza.pdb

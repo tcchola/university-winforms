@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UniverzitetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Korisnici">
+    <Key>
+      <PropertyRef Name="korisnikID" />
+    </Key>
+    <Property Name="korisnikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="datumRodjenja" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pssw" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isProfesor" Type="Boolean" />
+    <Property Name="gradID" Type="Int32" />
+    <NavigationProperty Name="Gradovi" Relationship="UniverzitetModel.FK__Korisnici__gradI__72C60C4A" FromRole="Korisnici" ToRole="Gradovi" />
+    <NavigationProperty Name="ProfesoriPredmetis" Relationship="UniverzitetModel.FK__Profesori__koris__7A672E12" FromRole="Korisnici" ToRole="ProfesoriPredmeti" />
+  </EntityType>
+  <EntityContainer Name="UniverzitetEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Korisnicis" EntityType="Self.Korisnici" />
+    <FunctionImport Name="Login" EntitySet="Korisnicis" ReturnType="Collection(UniverzitetModel.Korisnici)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="pssw" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Drzaves" EntityType="UniverzitetModel.Drzave" />
+    <EntitySet Name="Gradovis" EntityType="UniverzitetModel.Gradovi" />
+    <EntitySet Name="Ocjenes" EntityType="UniverzitetModel.Ocjene" />
+    <EntitySet Name="Predmetis" EntityType="UniverzitetModel.Predmeti" />
+    <EntitySet Name="Profesoris" EntityType="UniverzitetModel.Profesori" />
+    <EntitySet Name="ProfesoriPredmetis" EntityType="UniverzitetModel.ProfesoriPredmeti" />
+    <EntitySet Name="Studentis" EntityType="UniverzitetModel.Studenti" />
+    <AssociationSet Name="FK__Gradovi__drzavaI__7F2BE32F" Association="UniverzitetModel.FK__Gradovi__drzavaI__7F2BE32F">
+      <End Role="Drzave" EntitySet="Drzaves" />
+      <End Role="Gradovi" EntitySet="Gradovis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Korisnici__gradI__72C60C4A" Association="UniverzitetModel.FK__Korisnici__gradI__72C60C4A">
+      <End Role="Gradovi" EntitySet="Gradovis" />
+      <End Role="Korisnici" EntitySet="Korisnicis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesori__gradI__02FC7413" Association="UniverzitetModel.FK__Profesori__gradI__02FC7413">
+      <End Role="Gradovi" EntitySet="Gradovis" />
+      <End Role="Profesori" EntitySet="Profesoris" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Studenti__gradID__05D8E0BE" Association="UniverzitetModel.FK__Studenti__gradID__05D8E0BE">
+      <End Role="Gradovi" EntitySet="Gradovis" />
+      <End Role="Studenti" EntitySet="Studentis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesori__koris__7A672E12" Association="UniverzitetModel.FK__Profesori__koris__7A672E12">
+      <End Role="Korisnici" EntitySet="Korisnicis" />
+      <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmetis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ocjene__predmetI__7C4F7684" Association="UniverzitetModel.FK__Ocjene__predmetI__7C4F7684">
+      <End Role="Predmeti" EntitySet="Predmetis" />
+      <End Role="Ocjene" EntitySet="Ocjenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ocjene__profesor__08B54D69" Association="UniverzitetModel.FK__Ocjene__profesor__08B54D69">
+      <End Role="Profesori" EntitySet="Profesoris" />
+      <End Role="Ocjene" EntitySet="Ocjenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ocjene__studentI__07C12930" Association="UniverzitetModel.FK__Ocjene__studentI__07C12930">
+      <End Role="Studenti" EntitySet="Studentis" />
+      <End Role="Ocjene" EntitySet="Ocjenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Predmeti__profes__06CD04F7" Association="UniverzitetModel.FK__Predmeti__profes__06CD04F7">
+      <End Role="Profesori" EntitySet="Profesoris" />
+      <End Role="Predmeti" EntitySet="Predmetis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesori__predm__7B5B524B" Association="UniverzitetModel.FK__Profesori__predm__7B5B524B">
+      <End Role="Predmeti" EntitySet="Predmetis" />
+      <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmetis" />
+    </AssociationSet>
+    <FunctionImport Name="prikaz_gradova_cmbx" ReturnType="Collection(UniverzitetModel.prikaz_gradova_cmbx_Result)" />
+    <FunctionImport Name="prikaz_ocjena_predmeta_ucenika_po_korisnikID" ReturnType="Collection(UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result)">
+      <Parameter Name="studentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="prikazi_podatke_profesora" ReturnType="Collection(UniverzitetModel.prikazi_podatke_profesora_Result)" />
+    <FunctionImport Name="Register">
+      <Parameter Name="ime" Mode="In" Type="String" />
+      <Parameter Name="prezime" Mode="In" Type="String" />
+      <Parameter Name="datumRodjenja" Mode="In" Type="DateTime" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="pssw" Mode="In" Type="String" />
+      <Parameter Name="isProf" Mode="In" Type="Boolean" />
+      <Parameter Name="gradID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Login_Result">
+    <Property Type="Int32" Name="korisnikID" Nullable="false" />
+    <Property Type="String" Name="ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="prezime" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="datumRodjenja" Nullable="false" Precision="23" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="pssw" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="isProfesor" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Drzave">
+    <Key>
+      <PropertyRef Name="drzavaID" />
+    </Key>
+    <Property Name="drzavaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazivDrzave" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gradovis" Relationship="UniverzitetModel.FK__Gradovi__drzavaI__7F2BE32F" FromRole="Drzave" ToRole="Gradovi" />
+  </EntityType>
+  <EntityType Name="Gradovi">
+    <Key>
+      <PropertyRef Name="gradID" />
+    </Key>
+    <Property Name="gradID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazivGrada" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="drzavaID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Drzave" Relationship="UniverzitetModel.FK__Gradovi__drzavaI__7F2BE32F" FromRole="Gradovi" ToRole="Drzave" />
+    <NavigationProperty Name="Korisnicis" Relationship="UniverzitetModel.FK__Korisnici__gradI__72C60C4A" FromRole="Gradovi" ToRole="Korisnici" />
+    <NavigationProperty Name="Profesoris" Relationship="UniverzitetModel.FK__Profesori__gradI__02FC7413" FromRole="Gradovi" ToRole="Profesori" />
+    <NavigationProperty Name="Studentis" Relationship="UniverzitetModel.FK__Studenti__gradID__05D8E0BE" FromRole="Gradovi" ToRole="Studenti" />
+  </EntityType>
+  <EntityType Name="Ocjene">
+    <Key>
+      <PropertyRef Name="ocjenaID" />
+    </Key>
+    <Property Name="ocjenaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ocjena" Type="Int32" Nullable="false" />
+    <Property Name="datumOcjene" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="predmetID" Type="Int32" Nullable="false" />
+    <Property Name="studentID" Type="Int32" Nullable="false" />
+    <Property Name="profesorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Predmeti" Relationship="UniverzitetModel.FK__Ocjene__predmetI__7C4F7684" FromRole="Ocjene" ToRole="Predmeti" />
+    <NavigationProperty Name="Profesori" Relationship="UniverzitetModel.FK__Ocjene__profesor__08B54D69" FromRole="Ocjene" ToRole="Profesori" />
+    <NavigationProperty Name="Studenti" Relationship="UniverzitetModel.FK__Ocjene__studentI__07C12930" FromRole="Ocjene" ToRole="Studenti" />
+  </EntityType>
+  <EntityType Name="Predmeti">
+    <Key>
+      <PropertyRef Name="predmetID" />
+    </Key>
+    <Property Name="predmetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazivPredmeta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifraPredmeta" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="profesorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ocjenes" Relationship="UniverzitetModel.FK__Ocjene__predmetI__7C4F7684" FromRole="Predmeti" ToRole="Ocjene" />
+    <NavigationProperty Name="Profesori" Relationship="UniverzitetModel.FK__Predmeti__profes__06CD04F7" FromRole="Predmeti" ToRole="Profesori" />
+    <NavigationProperty Name="ProfesoriPredmetis" Relationship="UniverzitetModel.FK__Profesori__predm__7B5B524B" FromRole="Predmeti" ToRole="ProfesoriPredmeti" />
+  </EntityType>
+  <EntityType Name="Profesori">
+    <Key>
+      <PropertyRef Name="profesorID" />
+    </Key>
+    <Property Name="profesorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imeProfesora" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prezimeProfesora" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datumRodjenjaProfesora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gradID" Type="Int32" Nullable="false" />
+    <Property Name="emailProfesora" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="zvanjeProfesora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gradovi" Relationship="UniverzitetModel.FK__Profesori__gradI__02FC7413" FromRole="Profesori" ToRole="Gradovi" />
+    <NavigationProperty Name="Ocjenes" Relationship="UniverzitetModel.FK__Ocjene__profesor__08B54D69" FromRole="Profesori" ToRole="Ocjene" />
+    <NavigationProperty Name="Predmetis" Relationship="UniverzitetModel.FK__Predmeti__profes__06CD04F7" FromRole="Profesori" ToRole="Predmeti" />
+  </EntityType>
+  <EntityType Name="ProfesoriPredmeti">
+    <Key>
+      <PropertyRef Name="profesorPredmetID" />
+    </Key>
+    <Property Name="profesorPredmetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="korisnikID" Type="Int32" Nullable="false" />
+    <Property Name="predmetID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Korisnici" Relationship="UniverzitetModel.FK__Profesori__koris__7A672E12" FromRole="ProfesoriPredmeti" ToRole="Korisnici" />
+    <NavigationProperty Name="Predmeti" Relationship="UniverzitetModel.FK__Profesori__predm__7B5B524B" FromRole="ProfesoriPredmeti" ToRole="Predmeti" />
+  </EntityType>
+  <EntityType Name="Studenti">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imeStudenta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prezimeStudenta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datumRodjenjaStudenta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gradID" Type="Int32" Nullable="false" />
+    <Property Name="emailStudenta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="indexStudenta" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gradovi" Relationship="UniverzitetModel.FK__Studenti__gradID__05D8E0BE" FromRole="Studenti" ToRole="Gradovi" />
+    <NavigationProperty Name="Ocjenes" Relationship="UniverzitetModel.FK__Ocjene__studentI__07C12930" FromRole="Studenti" ToRole="Ocjene" />
+  </EntityType>
+  <Association Name="FK__Gradovi__drzavaI__7F2BE32F">
+    <End Type="UniverzitetModel.Drzave" Role="Drzave" Multiplicity="1" />
+    <End Type="UniverzitetModel.Gradovi" Role="Gradovi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drzave">
+        <PropertyRef Name="drzavaID" />
+      </Principal>
+      <Dependent Role="Gradovi">
+        <PropertyRef Name="drzavaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Korisnici__gradI__72C60C4A">
+    <End Type="UniverzitetModel.Gradovi" Role="Gradovi" Multiplicity="0..1" />
+    <End Type="UniverzitetModel.Korisnici" Role="Korisnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gradovi">
+        <PropertyRef Name="gradID" />
+      </Principal>
+      <Dependent Role="Korisnici">
+        <PropertyRef Name="gradID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesori__gradI__02FC7413">
+    <End Type="UniverzitetModel.Gradovi" Role="Gradovi" Multiplicity="1" />
+    <End Type="UniverzitetModel.Profesori" Role="Profesori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gradovi">
+        <PropertyRef Name="gradID" />
+      </Principal>
+      <Dependent Role="Profesori">
+        <PropertyRef Name="gradID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Studenti__gradID__05D8E0BE">
+    <End Type="UniverzitetModel.Gradovi" Role="Gradovi" Multiplicity="1" />
+    <End Type="UniverzitetModel.Studenti" Role="Studenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gradovi">
+        <PropertyRef Name="gradID" />
+      </Principal>
+      <Dependent Role="Studenti">
+        <PropertyRef Name="gradID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesori__koris__7A672E12">
+    <End Type="UniverzitetModel.Korisnici" Role="Korisnici" Multiplicity="1" />
+    <End Type="UniverzitetModel.ProfesoriPredmeti" Role="ProfesoriPredmeti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnici">
+        <PropertyRef Name="korisnikID" />
+      </Principal>
+      <Dependent Role="ProfesoriPredmeti">
+        <PropertyRef Name="korisnikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ocjene__predmetI__7C4F7684">
+    <End Type="UniverzitetModel.Predmeti" Role="Predmeti" Multiplicity="1" />
+    <End Type="UniverzitetModel.Ocjene" Role="Ocjene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Predmeti">
+        <PropertyRef Name="predmetID" />
+      </Principal>
+      <Dependent Role="Ocjene">
+        <PropertyRef Name="predmetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ocjene__profesor__08B54D69">
+    <End Type="UniverzitetModel.Profesori" Role="Profesori" Multiplicity="1" />
+    <End Type="UniverzitetModel.Ocjene" Role="Ocjene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesori">
+        <PropertyRef Name="profesorID" />
+      </Principal>
+      <Dependent Role="Ocjene">
+        <PropertyRef Name="profesorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ocjene__studentI__07C12930">
+    <End Type="UniverzitetModel.Studenti" Role="Studenti" Multiplicity="1" />
+    <End Type="UniverzitetModel.Ocjene" Role="Ocjene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Studenti">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="Ocjene">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Predmeti__profes__06CD04F7">
+    <End Type="UniverzitetModel.Profesori" Role="Profesori" Multiplicity="1" />
+    <End Type="UniverzitetModel.Predmeti" Role="Predmeti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesori">
+        <PropertyRef Name="profesorID" />
+      </Principal>
+      <Dependent Role="Predmeti">
+        <PropertyRef Name="profesorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesori__predm__7B5B524B">
+    <End Type="UniverzitetModel.Predmeti" Role="Predmeti" Multiplicity="1" />
+    <End Type="UniverzitetModel.ProfesoriPredmeti" Role="ProfesoriPredmeti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Predmeti">
+        <PropertyRef Name="predmetID" />
+      </Principal>
+      <Dependent Role="ProfesoriPredmeti">
+        <PropertyRef Name="predmetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="prikaz_gradova_cmbx_Result">
+    <Property Type="Int32" Name="gradID" Nullable="false" />
+    <Property Type="String" Name="gradDrzava" Nullable="false" MaxLength="102" />
+  </ComplexType>
+  <ComplexType Name="prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result">
+    <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ocjena" Nullable="false" />
+    <Property Type="DateTime" Name="datumOcjene" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="prosjek" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="prikazi_podatke_profesora_Result">
+    <Property Type="String" Name="imePrezime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="zvanjeProfesora" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="datumRodjenjaProfesora" Nullable="false" Precision="23" />
+    <Property Type="String" Name="emailProfesora" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="gradRodjenja" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

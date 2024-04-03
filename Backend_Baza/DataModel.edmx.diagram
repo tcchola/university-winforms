@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb4dae5310234de7aef0415e8d21896a" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="UniverzitetModel.Korisnici" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniverzitetModel.Drzave" Width="1.5" PointX="4.625" PointY="1.125" />
+        <EntityTypeShape EntityType="UniverzitetModel.Gradovi" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="UniverzitetModel.Ocjene" Width="1.5" PointX="7" PointY="0.875" />
+        <EntityTypeShape EntityType="UniverzitetModel.Predmeti" Width="1.5" PointX="9.75" PointY="0.875" />
+        <EntityTypeShape EntityType="UniverzitetModel.Profesori" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="UniverzitetModel.ProfesoriPredmeti" Width="1.5" PointX="4.625" PointY="3.125" />
+        <EntityTypeShape EntityType="UniverzitetModel.Studenti" Width="1.5" PointX="7" PointY="4.375" />
+        <AssociationConnector Association="UniverzitetModel.FK__Gradovi__drzavaI__7F2BE32F" />
+        <AssociationConnector Association="UniverzitetModel.FK__Korisnici__gradI__72C60C4A" />
+        <AssociationConnector Association="UniverzitetModel.FK__Profesori__gradI__02FC7413" />
+        <AssociationConnector Association="UniverzitetModel.FK__Studenti__gradID__05D8E0BE" />
+        <AssociationConnector Association="UniverzitetModel.FK__Profesori__koris__7A672E12" />
+        <AssociationConnector Association="UniverzitetModel.FK__Ocjene__predmetI__7C4F7684" />
+        <AssociationConnector Association="UniverzitetModel.FK__Ocjene__profesor__08B54D69" />
+        <AssociationConnector Association="UniverzitetModel.FK__Ocjene__studentI__07C12930" />
+        <AssociationConnector Association="UniverzitetModel.FK__Predmeti__profes__06CD04F7" />
+        <AssociationConnector Association="UniverzitetModel.FK__Profesori__predm__7B5B524B" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UniverzitetModelStoreContainer" CdmEntityContainer="UniverzitetEntities">
+    <EntitySetMapping Name="Korisnicis">
+      <EntityTypeMapping TypeName="UniverzitetModel.Korisnici">
+        <MappingFragment StoreEntitySet="Korisnici">
+          <ScalarProperty Name="gradID" ColumnName="gradID" />
+          <ScalarProperty Name="korisnikID" ColumnName="korisnikID" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="datumRodjenja" ColumnName="datumRodjenja" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pssw" ColumnName="pssw" />
+          <ScalarProperty Name="isProfesor" ColumnName="isProfesor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Login" FunctionName="UniverzitetModel.Store.Login" />
+    <EntitySetMapping Name="Drzaves">
+      <EntityTypeMapping TypeName="UniverzitetModel.Drzave">
+        <MappingFragment StoreEntitySet="Drzave">
+          <ScalarProperty Name="nazivDrzave" ColumnName="nazivDrzave" />
+          <ScalarProperty Name="drzavaID" ColumnName="drzavaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gradovis">
+      <EntityTypeMapping TypeName="UniverzitetModel.Gradovi">
+        <MappingFragment StoreEntitySet="Gradovi">
+          <ScalarProperty Name="drzavaID" ColumnName="drzavaID" />
+          <ScalarProperty Name="nazivGrada" ColumnName="nazivGrada" />
+          <ScalarProperty Name="gradID" ColumnName="gradID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ocjenes">
+      <EntityTypeMapping TypeName="UniverzitetModel.Ocjene">
+        <MappingFragment StoreEntitySet="Ocjene">
+          <ScalarProperty Name="profesorID" ColumnName="profesorID" />
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="predmetID" ColumnName="predmetID" />
+          <ScalarProperty Name="datumOcjene" ColumnName="datumOcjene" />
+          <ScalarProperty Name="ocjena" ColumnName="ocjena" />
+          <ScalarProperty Name="ocjenaID" ColumnName="ocjenaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Predmetis">
+      <EntityTypeMapping TypeName="UniverzitetModel.Predmeti">
+        <MappingFragment StoreEntitySet="Predmeti">
+          <ScalarProperty Name="profesorID" ColumnName="profesorID" />
+          <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
+          <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+          <ScalarProperty Name="predmetID" ColumnName="predmetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profesoris">
+      <EntityTypeMapping TypeName="UniverzitetModel.Profesori">
+        <MappingFragment StoreEntitySet="Profesori">
+          <ScalarProperty Name="zvanjeProfesora" ColumnName="zvanjeProfesora" />
+          <ScalarProperty Name="emailProfesora" ColumnName="emailProfesora" />
+          <ScalarProperty Name="gradID" ColumnName="gradID" />
+          <ScalarProperty Name="datumRodjenjaProfesora" ColumnName="datumRodjenjaProfesora" />
+          <ScalarProperty Name="prezimeProfesora" ColumnName="prezimeProfesora" />
+          <ScalarProperty Name="imeProfesora" ColumnName="imeProfesora" />
+          <ScalarProperty Name="profesorID" ColumnName="profesorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfesoriPredmetis">
+      <EntityTypeMapping TypeName="UniverzitetModel.ProfesoriPredmeti">
+        <MappingFragment StoreEntitySet="ProfesoriPredmeti">
+          <ScalarProperty Name="predmetID" ColumnName="predmetID" />
+          <ScalarProperty Name="korisnikID" ColumnName="korisnikID" />
+          <ScalarProperty Name="profesorPredmetID" ColumnName="profesorPredmetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Studentis">
+      <EntityTypeMapping TypeName="UniverzitetModel.Studenti">
+        <MappingFragment StoreEntitySet="Studenti">
+          <ScalarProperty Name="indexStudenta" ColumnName="indexStudenta" />
+          <ScalarProperty Name="emailStudenta" ColumnName="emailStudenta" />
+          <ScalarProperty Name="gradID" ColumnName="gradID" />
+          <ScalarProperty Name="datumRodjenjaStudenta" ColumnName="datumRodjenjaStudenta" />
+          <ScalarProperty Name="prezimeStudenta" ColumnName="prezimeStudenta" />
+          <ScalarProperty Name="imeStudenta" ColumnName="imeStudenta" />
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="prikaz_gradova_cmbx" FunctionName="UniverzitetModel.Store.prikaz_gradova_cmbx">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UniverzitetModel.prikaz_gradova_cmbx_Result">
+          <ScalarProperty Name="gradID" ColumnName="gradID" />
+          <ScalarProperty Name="gradDrzava" ColumnName="gradDrzava" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="prikaz_ocjena_predmeta_ucenika_po_korisnikID" FunctionName="UniverzitetModel.Store.prikaz_ocjena_predmeta_ucenika_po_korisnikID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result">
+          <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+          <ScalarProperty Name="ocjena" ColumnName="ocjena" />
+          <ScalarProperty Name="datumOcjene" ColumnName="datumOcjene" />
+          <ScalarProperty Name="prosjek" ColumnName="prosjek" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="prikazi_podatke_profesora" FunctionName="UniverzitetModel.Store.prikazi_podatke_profesora">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_podatke_profesora_Result">
+          <ScalarProperty Name="imePrezime" ColumnName="imePrezime" />
+          <ScalarProperty Name="zvanjeProfesora" ColumnName="zvanjeProfesora" />
+          <ScalarProperty Name="datumRodjenjaProfesora" ColumnName="datumRodjenjaProfesora" />
+          <ScalarProperty Name="emailProfesora" ColumnName="emailProfesora" />
+          <ScalarProperty Name="gradRodjenja" ColumnName="gradRodjenja" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
+  </EntityContainerMapping>
+</Mapping>
