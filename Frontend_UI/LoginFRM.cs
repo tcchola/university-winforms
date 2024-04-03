@@ -31,10 +31,6 @@ namespace Frontend_UI
         private void LoginFRM_Load(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = '*';
-            if (Control.IsKeyLocked(Keys.CapsLock))
-            {
-                MessageBox.Show("The Caps Lock key is ON.");
-            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -69,7 +65,7 @@ namespace Frontend_UI
                 }
             }
         }
-
+        //-----------------VALIDACIJA-----------------//
         private void txtUsername_Validating(object sender, CancelEventArgs e)
         {
             if(string.IsNullOrEmpty(txtUsername.Text))

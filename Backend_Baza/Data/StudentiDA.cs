@@ -8,9 +8,10 @@ namespace Backend_Baza.Data
 {
     public class StudentiDA
     {
-        //public static void setIndex(string index)
-        //{
-        //    Connections.datamodel.InputIndex(index);
-        //}
+        public static void RegisterNewStudent(Studenti student)
+        {
+            Connections.datamodel.RegisterStudent(student.imeStudenta, student.prezimeStudenta, student.datumRodjenjaStudenta,
+                student.gradID, student.emailStudenta, student.indexStudenta);
+        }
     }
 }

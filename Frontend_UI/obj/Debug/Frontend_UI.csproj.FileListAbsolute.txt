@@ -20,3 +20,6 @@ C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\F
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.RegisterFRM.resources
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.Ucenici.Studenti_WelcomeFRM.resources
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.Profesori.Profesori_WelcomeFRM.resources
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Izmijeni_ProfilFRM.resources
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Pregled_ProfilaFRM.resources
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Prikazi_OcjeneFRM.resources

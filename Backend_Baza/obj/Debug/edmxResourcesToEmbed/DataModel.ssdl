@@ -220,6 +220,22 @@
     <Parameter Name="isProf" Type="bit" Mode="In" />
     <Parameter Name="gradID" Type="int" Mode="In" />
   </Function>
+  <Function Name="RegisterProfesori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ime" Type="nvarchar" Mode="In" />
+    <Parameter Name="prezime" Type="nvarchar" Mode="In" />
+    <Parameter Name="datumRodjenja" Type="datetime" Mode="In" />
+    <Parameter Name="gradID" Type="int" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="zvanje" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RegisterStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ime" Type="nvarchar" Mode="In" />
+    <Parameter Name="prezime" Type="nvarchar" Mode="In" />
+    <Parameter Name="datumRodjenja" Type="datetime" Mode="In" />
+    <Parameter Name="gradID" Type="int" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="index" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="UniverzitetModelStoreContainer">
     <EntitySet Name="Drzave" EntityType="Self.Drzave" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gradovi" EntityType="Self.Gradovi" Schema="dbo" store:Type="Tables" />

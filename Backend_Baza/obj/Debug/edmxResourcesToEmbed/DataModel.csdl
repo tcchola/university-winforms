@@ -84,6 +84,22 @@
       <Parameter Name="isProf" Mode="In" Type="Boolean" />
       <Parameter Name="gradID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="RegisterProfesori">
+      <Parameter Name="ime" Mode="In" Type="String" />
+      <Parameter Name="prezime" Mode="In" Type="String" />
+      <Parameter Name="datumRodjenja" Mode="In" Type="DateTime" />
+      <Parameter Name="gradID" Mode="In" Type="Int32" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="zvanje" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegisterStudent">
+      <Parameter Name="ime" Mode="In" Type="String" />
+      <Parameter Name="prezime" Mode="In" Type="String" />
+      <Parameter Name="datumRodjenja" Mode="In" Type="DateTime" />
+      <Parameter Name="gradID" Mode="In" Type="Int32" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="index" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Login_Result">
     <Property Type="Int32" Name="korisnikID" Nullable="false" />

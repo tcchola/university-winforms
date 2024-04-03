@@ -117,5 +117,63 @@ namespace Backend_Baza
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Register", imeParameter, prezimeParameter, datumRodjenjaParameter, emailParameter, usernameParameter, psswParameter, isProfParameter, gradIDParameter);
         }
+    
+        public virtual int RegisterProfesori(string ime, string prezime, Nullable<System.DateTime> datumRodjenja, Nullable<int> gradID, string email, string zvanje)
+        {
+            var imeParameter = ime != null ?
+                new ObjectParameter("ime", ime) :
+                new ObjectParameter("ime", typeof(string));
+    
+            var prezimeParameter = prezime != null ?
+                new ObjectParameter("prezime", prezime) :
+                new ObjectParameter("prezime", typeof(string));
+    
+            var datumRodjenjaParameter = datumRodjenja.HasValue ?
+                new ObjectParameter("datumRodjenja", datumRodjenja) :
+                new ObjectParameter("datumRodjenja", typeof(System.DateTime));
+    
+            var gradIDParameter = gradID.HasValue ?
+                new ObjectParameter("gradID", gradID) :
+                new ObjectParameter("gradID", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var zvanjeParameter = zvanje != null ?
+                new ObjectParameter("zvanje", zvanje) :
+                new ObjectParameter("zvanje", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegisterProfesori", imeParameter, prezimeParameter, datumRodjenjaParameter, gradIDParameter, emailParameter, zvanjeParameter);
+        }
+    
+        public virtual int RegisterStudent(string ime, string prezime, Nullable<System.DateTime> datumRodjenja, Nullable<int> gradID, string email, string index)
+        {
+            var imeParameter = ime != null ?
+                new ObjectParameter("ime", ime) :
+                new ObjectParameter("ime", typeof(string));
+    
+            var prezimeParameter = prezime != null ?
+                new ObjectParameter("prezime", prezime) :
+                new ObjectParameter("prezime", typeof(string));
+    
+            var datumRodjenjaParameter = datumRodjenja.HasValue ?
+                new ObjectParameter("datumRodjenja", datumRodjenja) :
+                new ObjectParameter("datumRodjenja", typeof(System.DateTime));
+    
+            var gradIDParameter = gradID.HasValue ?
+                new ObjectParameter("gradID", gradID) :
+                new ObjectParameter("gradID", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var indexParameter = index != null ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegisterStudent", imeParameter, prezimeParameter, datumRodjenjaParameter, gradIDParameter, emailParameter, indexParameter);
+        }
     }
 }

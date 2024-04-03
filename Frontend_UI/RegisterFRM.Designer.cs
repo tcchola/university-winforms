@@ -49,6 +49,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblIndex = new System.Windows.Forms.Label();
             this.txtIndex = new System.Windows.Forms.TextBox();
+            this.lblProfTitle = new System.Windows.Forms.Label();
+            this.txtProfTitle = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -268,12 +270,36 @@
             this.txtIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIndex.WordWrap = false;
             // 
+            // lblProfTitle
+            // 
+            this.lblProfTitle.AutoSize = true;
+            this.lblProfTitle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblProfTitle.Location = new System.Drawing.Point(327, 206);
+            this.lblProfTitle.Name = "lblProfTitle";
+            this.lblProfTitle.Size = new System.Drawing.Size(30, 13);
+            this.lblProfTitle.TabIndex = 22;
+            this.lblProfTitle.Text = "Title";
+            // 
+            // txtProfTitle
+            // 
+            this.txtProfTitle.BackColor = System.Drawing.Color.White;
+            this.txtProfTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProfTitle.Location = new System.Drawing.Point(330, 222);
+            this.txtProfTitle.Name = "txtProfTitle";
+            this.txtProfTitle.Size = new System.Drawing.Size(205, 20);
+            this.txtProfTitle.TabIndex = 21;
+            this.txtProfTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProfTitle.WordWrap = false;
+            // 
             // RegisterFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 345);
+            this.Controls.Add(this.lblProfTitle);
+            this.Controls.Add(this.txtProfTitle);
             this.Controls.Add(this.lblIndex);
             this.Controls.Add(this.txtIndex);
             this.Controls.Add(this.label7);
@@ -326,5 +352,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblIndex;
         private System.Windows.Forms.TextBox txtIndex;
+        private System.Windows.Forms.Label lblProfTitle;
+        private System.Windows.Forms.TextBox txtProfTitle;
     }
 }

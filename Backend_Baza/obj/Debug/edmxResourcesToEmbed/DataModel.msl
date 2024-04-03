@@ -121,5 +121,7 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
+    <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
+    <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
   </EntityContainerMapping>
 </Mapping>

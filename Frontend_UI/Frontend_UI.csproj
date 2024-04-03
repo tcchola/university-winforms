@@ -68,6 +68,36 @@
     <Compile Include="RegisterFRM.Designer.cs">
       <DependentUpon>RegisterFRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.Designer.cs">
+      <DependentUpon>Studenti_Izmijeni_ProfilFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Pregled_PredmetaFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Pregled_PredmetaFRM.Designer.cs">
+      <DependentUpon>Studenti_Pregled_PredmetaFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Pregled_ProfilaFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Pregled_ProfilaFRM.Designer.cs">
+      <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.Designer.cs">
+      <DependentUpon>Studenti_Prikazi_OcjeneFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.Designer.cs">
+      <DependentUpon>Studenti_Prosjek_KalkulatorFRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeFRM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +126,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterFRM.resx">
       <DependentUpon>RegisterFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.resx">
+      <DependentUpon>Studenti_Izmijeni_ProfilFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentiForms\Studenti_Pregled_ProfilaFRM.resx">
+      <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.resx">
+      <DependentUpon>Studenti_Prikazi_OcjeneFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_WelcomeFRM.resx">
       <DependentUpon>Studenti_WelcomeFRM.cs</DependentUpon>
@@ -131,6 +170,11 @@
       <Project>{64f45c67-7c7d-495a-89be-600734e86000}</Project>
       <Name>Backend_Baza</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="assets\professor.png" />
+    <Content Include="assets\student.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

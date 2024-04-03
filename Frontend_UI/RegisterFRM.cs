@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backend_Baza;
 using Backend_Baza.Data;
-//using Frontend_UI.StudentiForms;
 
 namespace Frontend_UI
 {
@@ -40,22 +39,26 @@ namespace Frontend_UI
 
         private void RegisterNewProfessor()
         {
-            prof.imeProfesora=korisnik.ime;
-            prof.prezimeProfesora = korisnik.prezime;
-            prof.datumRodjenjaProfesora = korisnik.datumRodjenja;
-            prof.gradID = Convert.ToInt32(korisnik.gradID);
-            prof.emailProfesora=korisnik.email;
-            // zvanje cu rucno unositi na bazi
+            prof.imeProfesora = txtFirstName.Text;
+            prof.prezimeProfesora = txtLastName.Text;
+            prof.datumRodjenjaProfesora = dtpBirth.Value;
+            prof.gradID = Convert.ToInt32(cmbxGrad.SelectedIndex);
+            prof.emailProfesora = txtEmail.Text;
+            prof.zvanjeProfesora = txtProfTitle.Text;
+
+            ProfesoriDA.RegisterNewProfessor(prof);
         }
         
         private void RegisterNewStudent()
         {
-            student.imeStudenta = korisnik.ime;
-            student.prezimeStudenta = korisnik.prezime;
-            student.datumRodjenjaStudenta = korisnik.datumRodjenja;
-            student.gradID = Convert.ToInt32(korisnik.gradID);
-            student.emailStudenta = korisnik.email;
+            student.imeStudenta = txtFirstName.Text;
+            student.prezimeStudenta = txtLastName.Text;
+            student.datumRodjenjaStudenta = dtpBirth.Value;
+            student.gradID = Convert.ToInt32(cmbxGrad.SelectedIndex);
+            student.emailStudenta = txtEmail.Text;
             student.indexStudenta = txtIndex.Text;
+
+            StudentiDA.RegisterNewStudent(student);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -66,11 +69,10 @@ namespace Frontend_UI
 
         private void RegisterFRM_Load(object sender, EventArgs e)
         {
+            lblProfTitle.Hide();
+            txtProfTitle.Hide();
+
             txtPassword.PasswordChar = '*';                                     // maskiramo lozinku
-            if (Control.IsKeyLocked(Keys.CapsLock))
-            {
-                MessageBox.Show("The Caps Lock key is ON.");
-            }
 
             cmbxGrad.DataSource=KorisniciDA.getGradoveCMBX();
             cmbxGrad.DisplayMember = "gradDrzava";
@@ -82,10 +84,10 @@ namespace Frontend_UI
             if(this.ValidateChildren())
             {
                 RegisterNewUser();                                              // unosimo novog korisnika
-                
-                if(korisnik.isProfesor == chkProfessor.Checked)                   // ako je korisnik registrovan kao profesor unosimo te podatke u Profesori tabelu
+
+                if (chkProfessor.Checked == true)                               // ako je korisnik registrovan kao profesor unosimo te podatke u Profesori tabelu
                     RegisterNewProfessor();
-                else if (korisnik.isProfesor != chkProfessor.Checked)           // ako je korisnik registrovan kao student unosimo te podatke u Studenti tabelu
+                else if (chkProfessor.Checked == false)                         // ako je korisnik registrovan kao student unosimo te podatke u Studenti tabelu
                     RegisterNewStudent();
 
                 LoginFRM login = new LoginFRM();
@@ -148,7 +150,7 @@ namespace Frontend_UI
             else
                 errorProvider1.SetError(txtEmail, "");
         }
-        //------------SAKRIJ INDEX AKO JE PROFESOR------------//
+        //------------ZVANJE & INDEX POLJA SHOW/HIDE------------//
         private void chkProfessor_CheckedChanged(object sender, EventArgs e)
         {
             if (chkProfessor.Checked == true)
@@ -156,11 +158,18 @@ namespace Frontend_UI
                 lblIndex.Hide();
                 txtIndex.Hide();
                 txtIndex.Text = "";
+
+                lblProfTitle.Show();
+                txtProfTitle.Show();
             }
             else if (chkProfessor.Checked == false)
             {
                 lblIndex.Show();
                 txtIndex.Show();
+
+                lblProfTitle.Hide();
+                txtProfTitle.Hide();
+                txtProfTitle.Text = "";
             }
         }
     }

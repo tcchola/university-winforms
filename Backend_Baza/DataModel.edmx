@@ -225,6 +225,22 @@
           <Parameter Name="isProf" Type="bit" Mode="In" />
           <Parameter Name="gradID" Type="int" Mode="In" />
         </Function>
+        <Function Name="RegisterProfesori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ime" Type="nvarchar" Mode="In" />
+          <Parameter Name="prezime" Type="nvarchar" Mode="In" />
+          <Parameter Name="datumRodjenja" Type="datetime" Mode="In" />
+          <Parameter Name="gradID" Type="int" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="zvanje" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="RegisterStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ime" Type="nvarchar" Mode="In" />
+          <Parameter Name="prezime" Type="nvarchar" Mode="In" />
+          <Parameter Name="datumRodjenja" Type="datetime" Mode="In" />
+          <Parameter Name="gradID" Type="int" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="index" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="UniverzitetModelStoreContainer">
           <EntitySet Name="Drzave" EntityType="Self.Drzave" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gradovi" EntityType="Self.Gradovi" Schema="dbo" store:Type="Tables" />
@@ -362,6 +378,22 @@
             <Parameter Name="pssw" Mode="In" Type="String" />
             <Parameter Name="isProf" Mode="In" Type="Boolean" />
             <Parameter Name="gradID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RegisterProfesori">
+            <Parameter Name="ime" Mode="In" Type="String" />
+            <Parameter Name="prezime" Mode="In" Type="String" />
+            <Parameter Name="datumRodjenja" Mode="In" Type="DateTime" />
+            <Parameter Name="gradID" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="zvanje" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegisterStudent">
+            <Parameter Name="ime" Mode="In" Type="String" />
+            <Parameter Name="prezime" Mode="In" Type="String" />
+            <Parameter Name="datumRodjenja" Mode="In" Type="DateTime" />
+            <Parameter Name="gradID" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="index" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Login_Result">
@@ -723,6 +755,8 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
+          <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
+          <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

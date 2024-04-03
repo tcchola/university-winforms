@@ -1,7 +1,7 @@
 CREATE DATABASE Univerzitet
 USE Univerzitet
 
--- tabele --
+------------------TABLE------------------
 
 CREATE TABLE Drzave(
 	drzavaID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -45,12 +45,11 @@ CREATE TABLE Studenti(
 	emailStudenta NVARCHAR(100),
 	indexStudenta NVARCHAR(10) NOT NULL
 );
-
+-- econ, poduzetnistvo, mat, bos, eng, sah, tech.pismenost, 
 CREATE TABLE Predmeti(
 	predmetID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	nazivPredmeta NVARCHAR(50) NOT NULL,
 	sifraPredmeta NVARCHAR(10) NOT NULL,
-	profesorID INT FOREIGN KEY REFERENCES Profesori(profesorID) NOT NULL
 );
 
 CREATE TABLE Ocjene(
@@ -64,18 +63,33 @@ CREATE TABLE Ocjene(
 
 CREATE TABLE ProfesoriPredmeti(
 	profesorPredmetID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	korisnikID INT FOREIGN KEY REFERENCES Korisnici(korisnikID) NOT NULL,
+	profesorID INT FOREIGN KEY REFERENCES Profesori(profesorID) NOT NULL,
 	predmetID INT FOREIGN KEY REFERENCES Predmeti(predmetID) NOT NULL
 );
--- procedure --
+
+------------------PROCEDURE------------------
 
 CREATE PROCEDURE Register
 @ime NVARCHAR(50),    @prezime NVARCHAR(50),  @datumRodjenja DATETIME,
 @email NVARCHAR(100), @username NVARCHAR(50), @pssw NVARCHAR(100),
 @isProf BIT,          @gradID INT
 AS BEGIN
-	INSERT INTO Korisnici VALUES(@ime, @prezime, @datumRodjenja, @email, 
-	@username, @pssw, @isProf, @gradID)
+	INSERT INTO Korisnici 
+	VALUES(@ime, @prezime, @datumRodjenja, @email, @username, @pssw, @isProf, @gradID)
+END
+
+CREATE PROCEDURE RegisterStudent
+@ime NVARCHAR(50), @prezime NVARCHAR(50),  @datumRodjenja DATETIME,
+@gradID INT,	   @email NVARCHAR(100),   @index NVARCHAR(10)
+AS BEGIN
+	INSERT INTO Studenti VALUES(@ime, @prezime, @datumRodjenja, @gradID, @email, @index)
+END
+
+CREATE PROCEDURE RegisterProfesori
+@ime NVARCHAR(50), @prezime NVARCHAR(50),  @datumRodjenja DATETIME,
+@gradID INT,	   @email NVARCHAR(100),   @zvanje NVARCHAR(10)
+AS BEGIN
+	INSERT INTO Profesori VALUES(@ime, @prezime, @datumRodjenja, @gradID, @email, @zvanje)
 END
 
 --ovdje select nesto (user) pa na C# ako nije null idi dalje
@@ -94,6 +108,8 @@ AS BEGIN
 	JOIN Drzave as d on g.drzavaID=d.drzavaID
 	ORDER BY gradDrzava
 END
+
+------------------PROCEDURE ZA STUDENTE------------------
 
 --prikazi spisak predmeta
 --SELECT * FROM Predmeti
@@ -114,8 +130,7 @@ AS BEGIN
 	ORDER BY o.datumOcjene ASC
 END
 
---prikazi podatke za sve ucenike
-
+------------------PROCEDURE ZA PROFESORE------------------
 
 --prikazi podatke o svim profesorima
 CREATE PROCEDURE prikazi_podatke_profesora
@@ -126,3 +141,4 @@ AS BEGIN
 	JOIN Gradovi as g on prof.gradID=g.gradID
 END
 
+--prikazi podatke za sve ucenike
