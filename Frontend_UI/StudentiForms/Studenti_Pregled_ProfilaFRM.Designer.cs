@@ -136,6 +136,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Studenti_Pregled_ProfilaFRM";
             this.Text = "Pregled vaseg profila";
+            this.Load += new System.EventHandler(this.Studenti_Pregled_ProfilaFRM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

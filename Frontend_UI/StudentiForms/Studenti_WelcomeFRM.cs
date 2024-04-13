@@ -10,11 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Backend_Baza.Data;
 
 namespace Frontend_UI.Ucenici
 {
     public partial class Studenti_WelcomeFRM : Form
     {
+        int studentID;
+
         public Studenti_WelcomeFRM(double pros, string username)
         {
             InitializeComponent();
@@ -22,7 +25,6 @@ namespace Frontend_UI.Ucenici
             lblProsjek.Text = pros.ToString();
             lblUsername.Text = username;
         }
-
         private void Studenti_WelcomeFRM_Load(object sender, EventArgs e)
         {
 
@@ -39,13 +41,6 @@ namespace Frontend_UI.Ucenici
             this.Hide();
             Studenti_Izmijeni_ProfilFRM izmijeniFRM = new Studenti_Izmijeni_ProfilFRM();
             izmijeniFRM.Show();
-        }
-
-        private void prikaziMojeOcjeneToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Studenti_Prikazi_OcjeneFRM prikaziOcjnFRM = new Studenti_Prikazi_OcjeneFRM();
-            prikaziOcjnFRM.Show();
         }
 
         private void pregledPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,7 +60,7 @@ namespace Frontend_UI.Ucenici
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginFRM login = new LoginFRM();
+            LoginFRM login = new LoginFRM(studentID);
             login.Show();
         }
     }

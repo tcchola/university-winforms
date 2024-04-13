@@ -101,9 +101,6 @@
     <Compile Include="prikaz_gradova_cmbx_Result.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result.cs">
-      <DependentUpon>EntityDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Profesori.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>

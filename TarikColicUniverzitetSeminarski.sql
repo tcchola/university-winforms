@@ -113,24 +113,21 @@ END
 
 CREATE PROCEDURE prikazi_spisak_predmeta_studenta
 AS BEGIN
-	SELECT * FROM Predmeti
+	SELECT nazivPredmeta, sifraPredmeta FROM Predmeti
 END
 
---prikaz ocjena za predmete ucenika po IDu i prosjecnu ocjenu.
---Ucenik je odredjen uslovom korisnik->isProfesor=false.
---UcenikID je odabran preko comboboxa.
-CREATE PROCEDURE prikaz_ocjena_predmeta_ucenika_po_korisnikID
-@studentID INT
-AS BEGIN
-	SELECT p.nazivPredmeta, o.ocjena, o.datumOcjene, AVG(o.ocjena) as 'prosjek'
-	FROM Ocjene as o
-	JOIN Profesori as prof on o.profesorID=prof.profesorID
-	JOIN Studenti as s on o.studentID=s.studentID
-	JOIN Predmeti as p on o.predmetID=p.predmetID
-	WHERE s.studentID=@studentID
-	GROUP BY nazivPredmeta, ocjena, datumOcjene
-	ORDER BY o.datumOcjene ASC
-END
+--CREATE PROCEDURE prikaz_ocjena_predmeta_ucenika_po_studentID
+--@studentID INT
+--AS BEGIN
+--	SELECT p.nazivPredmeta, o.ocjena, o.datumOcjene, AVG(o.ocjena) as 'prosjek'
+--	FROM Ocjene as o
+--	JOIN Profesori as prof on o.profesorID=prof.profesorID
+--	JOIN Studenti as s on o.studentID=s.studentID
+--	JOIN Predmeti as p on o.predmetID=p.predmetID
+--	WHERE s.studentID=@studentID
+--	GROUP BY nazivPredmeta, ocjena, datumOcjene
+--	ORDER BY p.nazivPredmeta asc, o.datumOcjene ASC
+--END
 
 ------------------PROCEDURE ZA PROFESORE------------------
 
@@ -144,3 +141,5 @@ AS BEGIN
 END
 
 --prikazi podatke za sve ucenike
+
+--unos ocjena ucenicima

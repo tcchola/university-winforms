@@ -86,12 +86,6 @@
     <Compile Include="StudentiForms\Studenti_Pregled_ProfilaFRM.Designer.cs">
       <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.Designer.cs">
-      <DependentUpon>Studenti_Prikazi_OcjeneFRM.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,9 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_Pregled_ProfilaFRM.resx">
       <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.resx">
-      <DependentUpon>Studenti_Prikazi_OcjeneFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.resx">
       <DependentUpon>Studenti_Prosjek_KalkulatorFRM.cs</DependentUpon>

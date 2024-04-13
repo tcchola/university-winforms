@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UniverzitetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="UniverzitetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Drzave">
           <Key>
             <PropertyRef Name="drzavaID" />
@@ -198,9 +198,6 @@
           <Parameter Name="pssw" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="prikaz_gradova_cmbx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="prikaz_ocjena_predmeta_ucenika_po_korisnikID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="studentID" Type="int" Mode="In" />
-        </Function>
         <Function Name="prikazi_podatke_profesora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="prikazi_spisak_predmeta_studenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Register" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -275,8 +272,7 @@
             <End Role="Studenti" EntitySet="Studenti" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UniverzitetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -536,11 +532,7 @@
             <Parameter Name="pssw" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="prikaz_gradova_cmbx" ReturnType="Collection(UniverzitetModel.prikaz_gradova_cmbx_Result)" />
-          <FunctionImport Name="prikaz_ocjena_predmeta_ucenika_po_korisnikID" ReturnType="Collection(UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result)">
-            <Parameter Name="studentID" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="prikazi_podatke_profesora" ReturnType="Collection(UniverzitetModel.prikazi_podatke_profesora_Result)" />
-          <FunctionImport Name="prikazi_spisak_predmeta_studenta" ReturnType="Collection(UniverzitetModel.prikazi_spisak_predmeta_studenta_Result)" />
           <FunctionImport Name="Register">
             <Parameter Name="ime" Mode="In" Type="String" />
             <Parameter Name="prezime" Mode="In" Type="String" />
@@ -567,6 +559,7 @@
             <Parameter Name="email" Mode="In" Type="String" />
             <Parameter Name="index" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="prikazi_spisak_predmeta_studenta" ReturnType="Collection(UniverzitetModel.prikazi_spisak_predmeta_studenta_Result)" />
         </EntityContainer>
         <ComplexType Name="Login_Result">
           <Property Type="Int32" Name="korisnikID" Nullable="false" />
@@ -583,12 +576,6 @@
           <Property Type="Int32" Name="gradID" Nullable="false" />
           <Property Type="String" Name="gradDrzava" Nullable="false" MaxLength="102" />
         </ComplexType>
-        <ComplexType Name="prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result">
-          <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
-          <Property Type="Int32" Name="ocjena" Nullable="false" />
-          <Property Type="DateTime" Name="datumOcjene" Nullable="false" Precision="23" />
-          <Property Type="Int32" Name="prosjek" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="prikazi_podatke_profesora_Result">
           <Property Type="String" Name="imePrezime" Nullable="false" MaxLength="101" />
           <Property Type="String" Name="zvanjeProfesora" Nullable="true" MaxLength="50" />
@@ -597,7 +584,6 @@
           <Property Type="String" Name="gradRodjenja" Nullable="false" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="prikazi_spisak_predmeta_studenta_Result">
-          <Property Type="Int32" Name="predmetID" Nullable="false" />
           <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="sifraPredmeta" Nullable="false" MaxLength="10" />
         </ComplexType>
@@ -705,16 +691,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="prikaz_ocjena_predmeta_ucenika_po_korisnikID" FunctionName="UniverzitetModel.Store.prikaz_ocjena_predmeta_ucenika_po_korisnikID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result">
-                <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
-                <ScalarProperty Name="ocjena" ColumnName="ocjena" />
-                <ScalarProperty Name="datumOcjene" ColumnName="datumOcjene" />
-                <ScalarProperty Name="prosjek" ColumnName="prosjek" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="prikazi_podatke_profesora" FunctionName="UniverzitetModel.Store.prikazi_podatke_profesora">
             <ResultMapping>
               <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_podatke_profesora_Result">
@@ -726,18 +702,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
+          <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
+          <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
           <FunctionImportMapping FunctionImportName="prikazi_spisak_predmeta_studenta" FunctionName="UniverzitetModel.Store.prikazi_spisak_predmeta_studenta">
             <ResultMapping>
               <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_spisak_predmeta_studenta_Result">
-                <ScalarProperty Name="predmetID" ColumnName="predmetID" />
                 <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
                 <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
-          <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
-          <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

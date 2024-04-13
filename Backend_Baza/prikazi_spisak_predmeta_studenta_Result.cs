@@ -13,7 +13,6 @@ namespace Backend_Baza
     
     public partial class prikazi_spisak_predmeta_studenta_Result
     {
-        public int predmetID { get; set; }
         public string nazivPredmeta { get; set; }
         public string sifraPredmeta { get; set; }
     }

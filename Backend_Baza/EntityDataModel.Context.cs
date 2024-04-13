@@ -67,23 +67,9 @@ namespace Backend_Baza
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prikaz_gradova_cmbx_Result>("prikaz_gradova_cmbx");
         }
     
-        public virtual ObjectResult<prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result> prikaz_ocjena_predmeta_ucenika_po_korisnikID(Nullable<int> studentID)
-        {
-            var studentIDParameter = studentID.HasValue ?
-                new ObjectParameter("studentID", studentID) :
-                new ObjectParameter("studentID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result>("prikaz_ocjena_predmeta_ucenika_po_korisnikID", studentIDParameter);
-        }
-    
         public virtual ObjectResult<prikazi_podatke_profesora_Result> prikazi_podatke_profesora()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prikazi_podatke_profesora_Result>("prikazi_podatke_profesora");
-        }
-    
-        public virtual ObjectResult<prikazi_spisak_predmeta_studenta_Result> prikazi_spisak_predmeta_studenta()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prikazi_spisak_predmeta_studenta_Result>("prikazi_spisak_predmeta_studenta");
         }
     
         public virtual int Register(string ime, string prezime, Nullable<System.DateTime> datumRodjenja, string email, string username, string pssw, Nullable<bool> isProf, Nullable<int> gradID)
@@ -179,6 +165,11 @@ namespace Backend_Baza
                 new ObjectParameter("index", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegisterStudent", imeParameter, prezimeParameter, datumRodjenjaParameter, gradIDParameter, emailParameter, indexParameter);
+        }
+    
+        public virtual ObjectResult<prikazi_spisak_predmeta_studenta_Result> prikazi_spisak_predmeta_studenta()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prikazi_spisak_predmeta_studenta_Result>("prikazi_spisak_predmeta_studenta");
         }
     }
 }

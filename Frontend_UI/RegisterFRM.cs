@@ -18,6 +18,7 @@ namespace Frontend_UI
         Korisnici korisnik = new Korisnici();                                   // globalni objekat korisnika za registraciju
         Backend_Baza.Profesori prof = new Backend_Baza.Profesori();
         Studenti student = new Studenti();
+        int stID;
 
         public RegisterFRM()
         {
@@ -60,6 +61,7 @@ namespace Frontend_UI
             student.indexStudenta = txtIndex.Text;
 
             StudentiDA.RegisterNewStudent(student);
+            stID = student.studentID;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -90,8 +92,8 @@ namespace Frontend_UI
                     RegisterNewProfessor();
                 else if (chkProfessor.Checked == false)                         // ako je korisnik registrovan kao student unosimo te podatke u Studenti tabelu
                     RegisterNewStudent();
-
-                LoginFRM login = new LoginFRM();
+                
+                LoginFRM login = new LoginFRM(stID);
                 login.Show();
                 this.Close();
             }

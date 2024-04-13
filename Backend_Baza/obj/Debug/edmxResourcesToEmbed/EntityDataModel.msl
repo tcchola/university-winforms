@@ -98,16 +98,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="prikaz_ocjena_predmeta_ucenika_po_korisnikID" FunctionName="UniverzitetModel.Store.prikaz_ocjena_predmeta_ucenika_po_korisnikID">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result">
-          <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
-          <ScalarProperty Name="ocjena" ColumnName="ocjena" />
-          <ScalarProperty Name="datumOcjene" ColumnName="datumOcjene" />
-          <ScalarProperty Name="prosjek" ColumnName="prosjek" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="prikazi_podatke_profesora" FunctionName="UniverzitetModel.Store.prikazi_podatke_profesora">
       <ResultMapping>
         <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_podatke_profesora_Result">
@@ -119,17 +109,26 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
+    <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
+    <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
     <FunctionImportMapping FunctionImportName="prikazi_spisak_predmeta_studenta" FunctionName="UniverzitetModel.Store.prikazi_spisak_predmeta_studenta">
       <ResultMapping>
         <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_spisak_predmeta_studenta_Result">
-          <ScalarProperty Name="predmetID" ColumnName="predmetID" />
           <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
           <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
-    <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
-    <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
+    <FunctionImportMapping FunctionImportName="prikaz_ocjena_predmeta_ucenika_po_studentID" FunctionName="UniverzitetModel.Store.prikaz_ocjena_predmeta_ucenika_po_studentID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_studentID_Result">
+          <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+          <ScalarProperty Name="ocjena" ColumnName="ocjena" />
+          <ScalarProperty Name="datumOcjene" ColumnName="datumOcjene" />
+          <ScalarProperty Name="prosjek" ColumnName="prosjek" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

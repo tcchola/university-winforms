@@ -24,7 +24,7 @@ namespace Frontend_UI.StudentiForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Studenti_WelcomeFRM welcomefrm = new Studenti_WelcomeFRM(pros, null);
+            Studenti_WelcomeFRM welcomefrm = new Studenti_WelcomeFRM(pros, null,0);
             welcomefrm.Show();
             this.Close();
         }

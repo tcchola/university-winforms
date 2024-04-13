@@ -34,8 +34,6 @@
             this.mojProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledProfilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmijeniPodatkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ocjeneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prikaziMojeOcjeneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.predmetiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledPredmetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izracunajProsjekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +52,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(478, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(285, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(364, 408);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -66,13 +64,12 @@
             this.studentiMenu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mojProfilToolStripMenuItem,
-            this.ocjeneToolStripMenuItem,
             this.predmetiToolStripMenuItem,
             this.izracunajProsjekToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.studentiMenu.Location = new System.Drawing.Point(0, 0);
             this.studentiMenu.Name = "studentiMenu";
-            this.studentiMenu.Size = new System.Drawing.Size(693, 27);
+            this.studentiMenu.Size = new System.Drawing.Size(501, 27);
             this.studentiMenu.TabIndex = 11;
             // 
             // mojProfilToolStripMenuItem
@@ -99,22 +96,6 @@
             this.izmijeniPodatkeToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.izmijeniPodatkeToolStripMenuItem.Text = "Izmijeni podatke";
             this.izmijeniPodatkeToolStripMenuItem.Click += new System.EventHandler(this.izmijeniPodatkeToolStripMenuItem_Click);
-            // 
-            // ocjeneToolStripMenuItem
-            // 
-            this.ocjeneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prikaziMojeOcjeneToolStripMenuItem});
-            this.ocjeneToolStripMenuItem.Name = "ocjeneToolStripMenuItem";
-            this.ocjeneToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
-            this.ocjeneToolStripMenuItem.Text = "Ocjene";
-            // 
-            // prikaziMojeOcjeneToolStripMenuItem
-            // 
-            this.prikaziMojeOcjeneToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prikaziMojeOcjeneToolStripMenuItem.Name = "prikaziMojeOcjeneToolStripMenuItem";
-            this.prikaziMojeOcjeneToolStripMenuItem.Size = new System.Drawing.Size(215, 24);
-            this.prikaziMojeOcjeneToolStripMenuItem.Text = "Prikazi moje ocjene";
-            this.prikaziMojeOcjeneToolStripMenuItem.Click += new System.EventHandler(this.prikaziMojeOcjeneToolStripMenuItem_Click);
             // 
             // predmetiToolStripMenuItem
             // 
@@ -170,7 +151,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Thin", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 152);
+            this.label6.Location = new System.Drawing.Point(78, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 33);
             this.label6.TabIndex = 18;
@@ -180,7 +161,7 @@
             // 
             this.lblProsjek.AutoSize = true;
             this.lblProsjek.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProsjek.Location = new System.Drawing.Point(39, 185);
+            this.lblProsjek.Location = new System.Drawing.Point(79, 191);
             this.lblProsjek.Name = "lblProsjek";
             this.lblProsjek.Size = new System.Drawing.Size(42, 25);
             this.lblProsjek.TabIndex = 17;
@@ -189,7 +170,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(44, 294);
+            this.pictureBox2.Location = new System.Drawing.Point(19, 295);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(406, 124);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -201,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(693, 450);
+            this.ClientSize = new System.Drawing.Size(501, 431);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblProsjek);
@@ -211,8 +192,11 @@
             this.Controls.Add(this.studentiMenu);
             this.MainMenuStrip = this.studentiMenu;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(517, 470);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(517, 470);
             this.Name = "Studenti_WelcomeFRM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome Students";
             this.Load += new System.EventHandler(this.Studenti_WelcomeFRM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -227,8 +211,6 @@
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip studentiMenu;
-        private System.Windows.Forms.ToolStripMenuItem ocjeneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prikaziMojeOcjeneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem predmetiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledPredmetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izracunajProsjekToolStripMenuItem;

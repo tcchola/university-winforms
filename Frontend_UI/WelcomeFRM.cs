@@ -20,7 +20,7 @@ namespace Frontend_UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginFRM loginForm = new LoginFRM();
+            LoginFRM loginForm = new LoginFRM(0);
             loginForm.Show();
         }
 
