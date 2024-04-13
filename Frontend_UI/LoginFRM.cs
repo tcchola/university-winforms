@@ -16,6 +16,8 @@ namespace Frontend_UI
 {
     public partial class LoginFRM : Form
     {
+        Korisnici korisnik = new Korisnici();
+
         public LoginFRM()
         {
             InitializeComponent();
@@ -39,26 +41,33 @@ namespace Frontend_UI
             {
                 if (txtUsername.Text != "" && txtPassword.Text != "")
                 {
-                    Korisnici korisnik = Account.Login(txtUsername.Text, txtPassword.Text);
+                    korisnik = Account.Login(txtUsername.Text, txtPassword.Text);
 
-                    if (korisnik.isProfesor == true)
+                    if (korisnik != null)
                     {
-                        Profesori_WelcomeFRM profesori_WelcomeFRM = new Profesori_WelcomeFRM();
-                        profesori_WelcomeFRM.Show();
-                        this.Close();
+                        if (korisnik.isProfesor == true)
+                        {
+                            Profesori_WelcomeFRM profesori_WelcomeFRM = new Profesori_WelcomeFRM();
+                            profesori_WelcomeFRM.Show();
+                            this.Close();
+                        }
+                        else if (korisnik.isProfesor == false)
+                        {
+                            Studenti_WelcomeFRM studenti_WelcomeFRM = new Studenti_WelcomeFRM(0, korisnik.username);
+                            studenti_WelcomeFRM.Show();
+                            this.Close();
+                        }
                     }
-                    else if (korisnik.isProfesor == false)
+                    else
                     {
-                        Studenti_WelcomeFRM studenti_WelcomeFRM = new Studenti_WelcomeFRM();
-                        studenti_WelcomeFRM.Show();
-                        this.Close();
+                        MessageBox.Show("Korisnik ne postoji, registrujte se.");
                     }
+                    
                 }
-                else if (txtUsername.Text == "" && txtPassword.Text == "")
+                else if (korisnik == null )
                 {
-                    MessageBox.Show("Login fileds cannot be empty!");
+                    MessageBox.Show("Korisnik ne postoji!");
                 }
-                //ugradit provjeru da li uopste postoji user koji je unesen
                 else
                 {
                     MessageBox.Show("Incorrect username or password!");

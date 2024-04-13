@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend_Baza.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Frontend_UI.StudentiForms
         public Studenti_Pregled_PredmetaFRM()
         {
             InitializeComponent();
+        }
+
+        private void Studenti_Pregled_PredmetaFRM_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = StudentiDA.getPredmete();
         }
     }
 }

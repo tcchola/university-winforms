@@ -21,5 +21,6 @@ namespace Backend_Baza
         public string username { get; set; }
         public string pssw { get; set; }
         public Nullable<bool> isProfesor { get; set; }
+        public Nullable<int> gradID { get; set; }
     }
 }

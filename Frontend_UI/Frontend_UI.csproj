@@ -130,11 +130,17 @@
     <EmbeddedResource Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.resx">
       <DependentUpon>Studenti_Izmijeni_ProfilFRM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentiForms\Studenti_Pregled_PredmetaFRM.resx">
+      <DependentUpon>Studenti_Pregled_PredmetaFRM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_Pregled_ProfilaFRM.resx">
       <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_Prikazi_OcjeneFRM.resx">
       <DependentUpon>Studenti_Prikazi_OcjeneFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.resx">
+      <DependentUpon>Studenti_Prosjek_KalkulatorFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_WelcomeFRM.resx">
       <DependentUpon>Studenti_WelcomeFRM.cs</DependentUpon>

@@ -100,6 +100,11 @@
       <Parameter Name="email" Mode="In" Type="String" />
       <Parameter Name="index" Mode="In" Type="String" />
     </FunctionImport>
+    <AssociationSet Name="FK__Profesori__profe__17F790F9" Association="UniverzitetModel.FK__Profesori__profe__17F790F9">
+      <End Role="Profesori" EntitySet="Profesoris" />
+      <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmetis" />
+    </AssociationSet>
+    <FunctionImport Name="prikazi_spisak_predmeta_studenta" ReturnType="Collection(UniverzitetModel.prikazi_spisak_predmeta_studenta_Result)" />
   </EntityContainer>
   <ComplexType Name="Login_Result">
     <Property Type="Int32" Name="korisnikID" Nullable="false" />
@@ -171,6 +176,7 @@
     <NavigationProperty Name="Gradovi" Relationship="UniverzitetModel.FK__Profesori__gradI__02FC7413" FromRole="Profesori" ToRole="Gradovi" />
     <NavigationProperty Name="Ocjenes" Relationship="UniverzitetModel.FK__Ocjene__profesor__08B54D69" FromRole="Profesori" ToRole="Ocjene" />
     <NavigationProperty Name="Predmetis" Relationship="UniverzitetModel.FK__Predmeti__profes__06CD04F7" FromRole="Profesori" ToRole="Predmeti" />
+    <NavigationProperty Name="ProfesoriPredmetis" Relationship="UniverzitetModel.FK__Profesori__profe__17F790F9" FromRole="Profesori" ToRole="ProfesoriPredmeti" />
   </EntityType>
   <EntityType Name="ProfesoriPredmeti">
     <Key>
@@ -181,6 +187,8 @@
     <Property Name="predmetID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Korisnici" Relationship="UniverzitetModel.FK__Profesori__koris__7A672E12" FromRole="ProfesoriPredmeti" ToRole="Korisnici" />
     <NavigationProperty Name="Predmeti" Relationship="UniverzitetModel.FK__Profesori__predm__7B5B524B" FromRole="ProfesoriPredmeti" ToRole="Predmeti" />
+    <Property Name="profesorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Profesori" Relationship="UniverzitetModel.FK__Profesori__profe__17F790F9" FromRole="ProfesoriPredmeti" ToRole="Profesori" />
   </EntityType>
   <EntityType Name="Studenti">
     <Key>
@@ -332,5 +340,22 @@
     <Property Type="DateTime" Name="datumRodjenjaProfesora" Nullable="false" Precision="23" />
     <Property Type="String" Name="emailProfesora" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="gradRodjenja" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <Association Name="FK__Profesori__profe__17F790F9">
+    <End Type="UniverzitetModel.Profesori" Role="Profesori" Multiplicity="1" />
+    <End Type="UniverzitetModel.ProfesoriPredmeti" Role="ProfesoriPredmeti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesori">
+        <PropertyRef Name="profesorID" />
+      </Principal>
+      <Dependent Role="ProfesoriPredmeti">
+        <PropertyRef Name="profesorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="prikazi_spisak_predmeta_studenta_Result">
+    <Property Type="Int32" Name="predmetID" Nullable="false" />
+    <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="sifraPredmeta" Nullable="false" MaxLength="10" />
   </ComplexType>
 </Schema>

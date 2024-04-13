@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backend_Baza;
 using Backend_Baza.Data;
+using Frontend_UI.Ucenici;
 
 namespace Frontend_UI
 {
@@ -95,6 +96,7 @@ namespace Frontend_UI
                 this.Close();
             }
         }
+
         //-----------------VALIDACIJA-----------------//
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
         {

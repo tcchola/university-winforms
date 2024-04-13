@@ -23,3 +23,5 @@ C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\F
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Izmijeni_ProfilFRM.resources
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Pregled_ProfilaFRM.resources
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Prikazi_OcjeneFRM.resources
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Prosjek_KalkulatorFRM.resources
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Pregled_PredmetaFRM.resources

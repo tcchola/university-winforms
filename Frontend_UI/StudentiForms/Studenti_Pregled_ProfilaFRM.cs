@@ -20,7 +20,7 @@ namespace Frontend_UI.StudentiForms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Studenti_WelcomeFRM studWelcome = new Studenti_WelcomeFRM();
+            Studenti_WelcomeFRM studWelcome = new Studenti_WelcomeFRM(0, null);
             studWelcome.Show();
             this.Close();
         }

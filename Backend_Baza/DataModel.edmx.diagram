@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cb4dae5310234de7aef0415e8d21896a" Name="Diagram1" ZoomLevel="71">
+      <Diagram DiagramId="cb4dae5310234de7aef0415e8d21896a" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="UniverzitetModel.Korisnici" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="UniverzitetModel.Drzave" Width="1.5" PointX="4.625" PointY="0.875" />
         <EntityTypeShape EntityType="UniverzitetModel.Gradovi" Width="1.5" PointX="3.5" PointY="5.5" />
@@ -23,6 +23,7 @@
         <AssociationConnector Association="UniverzitetModel.FK__Ocjene__studentI__07C12930" />
         <AssociationConnector Association="UniverzitetModel.FK__Predmeti__profes__06CD04F7" />
         <AssociationConnector Association="UniverzitetModel.FK__Profesori__predm__7B5B524B" />
+        <AssociationConnector Association="UniverzitetModel.FK__Profesori__profe__17F790F9" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

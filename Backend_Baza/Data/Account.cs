@@ -16,7 +16,7 @@ namespace Backend_Baza.Data
         }
         public static Korisnici Login(string username, string password)
         {
-            return Connections.datamodel.Login(username, password).First();
+            return Connections.datamodel.Login(username, password).FirstOrDefault();
         }
     }
 }

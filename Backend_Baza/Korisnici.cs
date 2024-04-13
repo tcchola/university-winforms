@@ -14,12 +14,6 @@ namespace Backend_Baza
     
     public partial class Korisnici
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Korisnici()
-        {
-            this.ProfesoriPredmetis = new HashSet<ProfesoriPredmeti>();
-        }
-    
         public int korisnikID { get; set; }
         public string ime { get; set; }
         public string prezime { get; set; }
@@ -31,7 +25,5 @@ namespace Backend_Baza
         public Nullable<int> gradID { get; set; }
     
         public virtual Gradovi Gradovi { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProfesoriPredmeti> ProfesoriPredmetis { get; set; }
     }
 }

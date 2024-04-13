@@ -111,8 +111,10 @@ END
 
 ------------------PROCEDURE ZA STUDENTE------------------
 
---prikazi spisak predmeta
---SELECT * FROM Predmeti
+CREATE PROCEDURE prikazi_spisak_predmeta_studenta
+AS BEGIN
+	SELECT * FROM Predmeti
+END
 
 --prikaz ocjena za predmete ucenika po IDu i prosjecnu ocjenu.
 --Ucenik je odredjen uslovom korisnik->isProfesor=false.

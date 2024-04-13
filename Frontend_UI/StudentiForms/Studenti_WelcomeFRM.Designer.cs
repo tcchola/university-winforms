@@ -31,22 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Studenti_WelcomeFRM));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.studentiMenu = new System.Windows.Forms.MenuStrip();
+            this.mojProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledProfilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmijeniPodatkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ocjeneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prikaziMojeOcjeneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.predmetiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledPredmetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izracunajProsjekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mojProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledProfilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmijeniPodatkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblProsjek = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.studentiMenu.SuspendLayout();
@@ -57,7 +54,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(555, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(478, 69);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(364, 408);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,8 +72,33 @@
             this.logoutToolStripMenuItem});
             this.studentiMenu.Location = new System.Drawing.Point(0, 0);
             this.studentiMenu.Name = "studentiMenu";
-            this.studentiMenu.Size = new System.Drawing.Size(800, 27);
+            this.studentiMenu.Size = new System.Drawing.Size(693, 27);
             this.studentiMenu.TabIndex = 11;
+            // 
+            // mojProfilToolStripMenuItem
+            // 
+            this.mojProfilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledProfilaToolStripMenuItem,
+            this.izmijeniPodatkeToolStripMenuItem});
+            this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
+            this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
+            this.mojProfilToolStripMenuItem.Text = "Moj Profil";
+            // 
+            // pregledProfilaToolStripMenuItem
+            // 
+            this.pregledProfilaToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
+            this.pregledProfilaToolStripMenuItem.Name = "pregledProfilaToolStripMenuItem";
+            this.pregledProfilaToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.pregledProfilaToolStripMenuItem.Text = "Pregled profila";
+            this.pregledProfilaToolStripMenuItem.Click += new System.EventHandler(this.pregledProfilaToolStripMenuItem_Click);
+            // 
+            // izmijeniPodatkeToolStripMenuItem
+            // 
+            this.izmijeniPodatkeToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
+            this.izmijeniPodatkeToolStripMenuItem.Name = "izmijeniPodatkeToolStripMenuItem";
+            this.izmijeniPodatkeToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.izmijeniPodatkeToolStripMenuItem.Text = "Izmijeni podatke";
+            this.izmijeniPodatkeToolStripMenuItem.Click += new System.EventHandler(this.izmijeniPodatkeToolStripMenuItem_Click);
             // 
             // ocjeneToolStripMenuItem
             // 
@@ -117,37 +139,12 @@
             this.izracunajProsjekToolStripMenuItem.Text = "Izracunaj Prosjek";
             this.izracunajProsjekToolStripMenuItem.Click += new System.EventHandler(this.izracunajProsjekToolStripMenuItem_Click);
             // 
-            // mojProfilToolStripMenuItem
-            // 
-            this.mojProfilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pregledProfilaToolStripMenuItem,
-            this.izmijeniPodatkeToolStripMenuItem});
-            this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
-            this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
-            this.mojProfilToolStripMenuItem.Text = "Moj Profil";
-            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
-            // 
-            // pregledProfilaToolStripMenuItem
-            // 
-            this.pregledProfilaToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
-            this.pregledProfilaToolStripMenuItem.Name = "pregledProfilaToolStripMenuItem";
-            this.pregledProfilaToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
-            this.pregledProfilaToolStripMenuItem.Text = "Pregled Profila";
-            this.pregledProfilaToolStripMenuItem.Click += new System.EventHandler(this.pregledProfilaToolStripMenuItem_Click);
-            // 
-            // izmijeniPodatkeToolStripMenuItem
-            // 
-            this.izmijeniPodatkeToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
-            this.izmijeniPodatkeToolStripMenuItem.Name = "izmijeniPodatkeToolStripMenuItem";
-            this.izmijeniPodatkeToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
-            this.izmijeniPodatkeToolStripMenuItem.Text = "Izmijeni Podatke";
-            this.izmijeniPodatkeToolStripMenuItem.Click += new System.EventHandler(this.izmijeniPodatkeToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -159,72 +156,42 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Dobro Došli";
             // 
-            // label2
+            // lblUsername
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label2.Location = new System.Drawing.Point(211, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 19);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "First Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label3.Location = new System.Drawing.Point(303, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 19);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Last Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label4.Location = new System.Drawing.Point(15, 203);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 19);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Index";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto Thin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 174);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 19);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Broj Indexa";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Roboto Thin", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(200, 79);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(105, 25);
+            this.lblUsername.TabIndex = 13;
+            this.lblUsername.Text = "username";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Thin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(211, 174);
+            this.label6.Font = new System.Drawing.Font("Roboto Thin", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(38, 152);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 19);
+            this.label6.Size = new System.Drawing.Size(148, 33);
             this.label6.TabIndex = 18;
-            this.label6.Text = "GPA";
+            this.label6.Text = "Vaš prosjek";
             // 
-            // label7
+            // lblProsjek
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label7.Location = new System.Drawing.Point(211, 203);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 19);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Prosjek";
+            this.lblProsjek.AutoSize = true;
+            this.lblProsjek.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProsjek.Location = new System.Drawing.Point(39, 185);
+            this.lblProsjek.Name = "lblProsjek";
+            this.lblProsjek.Size = new System.Drawing.Size(42, 25);
+            this.lblProsjek.TabIndex = 17;
+            this.lblProsjek.Text = "0.0";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 293);
+            this.pictureBox2.Location = new System.Drawing.Point(44, 294);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(454, 145);
+            this.pictureBox2.Size = new System.Drawing.Size(406, 124);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
@@ -233,18 +200,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(693, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblProsjek);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.studentiMenu);
             this.MainMenuStrip = this.studentiMenu;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Studenti_WelcomeFRM";
             this.Text = "Welcome Students";
@@ -271,12 +237,9 @@
         private System.Windows.Forms.ToolStripMenuItem izmijeniPodatkeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblProsjek;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

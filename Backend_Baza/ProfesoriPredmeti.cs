@@ -15,10 +15,10 @@ namespace Backend_Baza
     public partial class ProfesoriPredmeti
     {
         public int profesorPredmetID { get; set; }
-        public int korisnikID { get; set; }
         public int predmetID { get; set; }
+        public int profesorID { get; set; }
     
-        public virtual Korisnici Korisnici { get; set; }
         public virtual Predmeti Predmeti { get; set; }
+        public virtual Profesori Profesori { get; set; }
     }
 }

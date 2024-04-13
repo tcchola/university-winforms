@@ -52,7 +52,6 @@
           <Property Name="predmetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nazivPredmeta" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="sifraPredmeta" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="profesorID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Profesori">
           <Key>
@@ -71,8 +70,8 @@
             <PropertyRef Name="profesorPredmetID" />
           </Key>
           <Property Name="profesorPredmetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="korisnikID" Type="int" Nullable="false" />
           <Property Name="predmetID" Type="int" Nullable="false" />
+          <Property Name="profesorID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Studenti">
           <Key>
@@ -146,18 +145,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Predmeti__profes__06CD04F7">
-          <End Role="Profesori" Type="Self.Profesori" Multiplicity="1" />
-          <End Role="Predmeti" Type="Self.Predmeti" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Profesori">
-              <PropertyRef Name="profesorID" />
-            </Principal>
-            <Dependent Role="Predmeti">
-              <PropertyRef Name="profesorID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Profesori__gradI__02FC7413">
           <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="1" />
           <End Role="Profesori" Type="Self.Profesori" Multiplicity="*" />
@@ -170,18 +157,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Profesori__koris__7A672E12">
-          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="1" />
-          <End Role="ProfesoriPredmeti" Type="Self.ProfesoriPredmeti" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Korisnici">
-              <PropertyRef Name="korisnikID" />
-            </Principal>
-            <Dependent Role="ProfesoriPredmeti">
-              <PropertyRef Name="korisnikID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Profesori__predm__7B5B524B">
           <End Role="Predmeti" Type="Self.Predmeti" Multiplicity="1" />
           <End Role="ProfesoriPredmeti" Type="Self.ProfesoriPredmeti" Multiplicity="*" />
@@ -191,6 +166,18 @@
             </Principal>
             <Dependent Role="ProfesoriPredmeti">
               <PropertyRef Name="predmetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profesori__profe__17F790F9">
+          <End Role="Profesori" Type="Self.Profesori" Multiplicity="1" />
+          <End Role="ProfesoriPredmeti" Type="Self.ProfesoriPredmeti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesori">
+              <PropertyRef Name="profesorID" />
+            </Principal>
+            <Dependent Role="ProfesoriPredmeti">
+              <PropertyRef Name="profesorID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -215,6 +202,7 @@
           <Parameter Name="studentID" Type="int" Mode="In" />
         </Function>
         <Function Name="prikazi_podatke_profesora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="prikazi_spisak_predmeta_studenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Register" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ime" Type="nvarchar" Mode="In" />
           <Parameter Name="prezime" Type="nvarchar" Mode="In" />
@@ -270,20 +258,16 @@
             <End Role="Studenti" EntitySet="Studenti" />
             <End Role="Ocjene" EntitySet="Ocjene" />
           </AssociationSet>
-          <AssociationSet Name="FK__Predmeti__profes__06CD04F7" Association="Self.FK__Predmeti__profes__06CD04F7">
-            <End Role="Profesori" EntitySet="Profesori" />
-            <End Role="Predmeti" EntitySet="Predmeti" />
-          </AssociationSet>
           <AssociationSet Name="FK__Profesori__gradI__02FC7413" Association="Self.FK__Profesori__gradI__02FC7413">
             <End Role="Gradovi" EntitySet="Gradovi" />
             <End Role="Profesori" EntitySet="Profesori" />
           </AssociationSet>
-          <AssociationSet Name="FK__Profesori__koris__7A672E12" Association="Self.FK__Profesori__koris__7A672E12">
-            <End Role="Korisnici" EntitySet="Korisnici" />
-            <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmeti" />
-          </AssociationSet>
           <AssociationSet Name="FK__Profesori__predm__7B5B524B" Association="Self.FK__Profesori__predm__7B5B524B">
             <End Role="Predmeti" EntitySet="Predmeti" />
+            <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmeti" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profesori__profe__17F790F9" Association="Self.FK__Profesori__profe__17F790F9">
+            <End Role="Profesori" EntitySet="Profesori" />
             <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmeti" />
           </AssociationSet>
           <AssociationSet Name="FK__Studenti__gradID__05D8E0BE" Association="Self.FK__Studenti__gradID__05D8E0BE">
@@ -395,6 +379,11 @@
             <Parameter Name="email" Mode="In" Type="String" />
             <Parameter Name="index" Mode="In" Type="String" />
           </FunctionImport>
+          <AssociationSet Name="FK__Profesori__profe__17F790F9" Association="UniverzitetModel.FK__Profesori__profe__17F790F9">
+            <End Role="Profesori" EntitySet="Profesoris" />
+            <End Role="ProfesoriPredmeti" EntitySet="ProfesoriPredmetis" />
+          </AssociationSet>
+          <FunctionImport Name="prikazi_spisak_predmeta_studenta" ReturnType="Collection(UniverzitetModel.prikazi_spisak_predmeta_studenta_Result)" />
         </EntityContainer>
         <ComplexType Name="Login_Result">
           <Property Type="Int32" Name="korisnikID" Nullable="false" />
@@ -447,7 +436,6 @@
           <Property Name="predmetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nazivPredmeta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sifraPredmeta" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="profesorID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ocjenes" Relationship="UniverzitetModel.FK__Ocjene__predmetI__7C4F7684" FromRole="Predmeti" ToRole="Ocjene" />
           <NavigationProperty Name="Profesori" Relationship="UniverzitetModel.FK__Predmeti__profes__06CD04F7" FromRole="Predmeti" ToRole="Profesori" />
           <NavigationProperty Name="ProfesoriPredmetis" Relationship="UniverzitetModel.FK__Profesori__predm__7B5B524B" FromRole="Predmeti" ToRole="ProfesoriPredmeti" />
@@ -466,16 +454,19 @@
           <NavigationProperty Name="Gradovi" Relationship="UniverzitetModel.FK__Profesori__gradI__02FC7413" FromRole="Profesori" ToRole="Gradovi" />
           <NavigationProperty Name="Ocjenes" Relationship="UniverzitetModel.FK__Ocjene__profesor__08B54D69" FromRole="Profesori" ToRole="Ocjene" />
           <NavigationProperty Name="Predmetis" Relationship="UniverzitetModel.FK__Predmeti__profes__06CD04F7" FromRole="Profesori" ToRole="Predmeti" />
+          <NavigationProperty Name="ProfesoriPredmetis" Relationship="UniverzitetModel.FK__Profesori__profe__17F790F9" FromRole="Profesori" ToRole="ProfesoriPredmeti" />
         </EntityType>
         <EntityType Name="ProfesoriPredmeti">
           <Key>
             <PropertyRef Name="profesorPredmetID" />
           </Key>
           <Property Name="profesorPredmetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="korisnikID" Type="Int32" Nullable="false" />
+          <Property Name="korisnikID" Nullable="false" Type="Int32" />
           <Property Name="predmetID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Korisnici" Relationship="UniverzitetModel.FK__Profesori__koris__7A672E12" FromRole="ProfesoriPredmeti" ToRole="Korisnici" />
           <NavigationProperty Name="Predmeti" Relationship="UniverzitetModel.FK__Profesori__predm__7B5B524B" FromRole="ProfesoriPredmeti" ToRole="Predmeti" />
+          <Property Name="profesorID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Profesori" Relationship="UniverzitetModel.FK__Profesori__profe__17F790F9" FromRole="ProfesoriPredmeti" ToRole="Profesori" />
         </EntityType>
         <EntityType Name="Studenti">
           <Key>
@@ -628,6 +619,23 @@
           <Property Type="String" Name="emailProfesora" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="gradRodjenja" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <Association Name="FK__Profesori__profe__17F790F9">
+          <End Type="UniverzitetModel.Profesori" Role="Profesori" Multiplicity="1" />
+          <End Type="UniverzitetModel.ProfesoriPredmeti" Role="ProfesoriPredmeti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesori">
+              <PropertyRef Name="profesorID" />
+            </Principal>
+            <Dependent Role="ProfesoriPredmeti">
+              <PropertyRef Name="profesorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="prikazi_spisak_predmeta_studenta_Result">
+          <Property Type="Int32" Name="predmetID" Nullable="false" />
+          <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="sifraPredmeta" Nullable="false" MaxLength="10" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -683,7 +691,6 @@
           <EntitySetMapping Name="Predmetis">
             <EntityTypeMapping TypeName="UniverzitetModel.Predmeti">
               <MappingFragment StoreEntitySet="Predmeti">
-                <ScalarProperty Name="profesorID" ColumnName="profesorID" />
                 <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
                 <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
                 <ScalarProperty Name="predmetID" ColumnName="predmetID" />
@@ -706,8 +713,8 @@
           <EntitySetMapping Name="ProfesoriPredmetis">
             <EntityTypeMapping TypeName="UniverzitetModel.ProfesoriPredmeti">
               <MappingFragment StoreEntitySet="ProfesoriPredmeti">
+                <ScalarProperty Name="profesorID" ColumnName="profesorID" />
                 <ScalarProperty Name="predmetID" ColumnName="predmetID" />
-                <ScalarProperty Name="korisnikID" ColumnName="korisnikID" />
                 <ScalarProperty Name="profesorPredmetID" ColumnName="profesorPredmetID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -757,6 +764,15 @@
           <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
           <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
           <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
+          <FunctionImportMapping FunctionImportName="prikazi_spisak_predmeta_studenta" FunctionName="UniverzitetModel.Store.prikazi_spisak_predmeta_studenta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_spisak_predmeta_studenta_Result">
+                <ScalarProperty Name="predmetID" ColumnName="predmetID" />
+                <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+                <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

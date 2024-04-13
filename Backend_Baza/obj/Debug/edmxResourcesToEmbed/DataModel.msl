@@ -49,7 +49,6 @@
     <EntitySetMapping Name="Predmetis">
       <EntityTypeMapping TypeName="UniverzitetModel.Predmeti">
         <MappingFragment StoreEntitySet="Predmeti">
-          <ScalarProperty Name="profesorID" ColumnName="profesorID" />
           <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
           <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
           <ScalarProperty Name="predmetID" ColumnName="predmetID" />
@@ -72,8 +71,8 @@
     <EntitySetMapping Name="ProfesoriPredmetis">
       <EntityTypeMapping TypeName="UniverzitetModel.ProfesoriPredmeti">
         <MappingFragment StoreEntitySet="ProfesoriPredmeti">
+          <ScalarProperty Name="profesorID" ColumnName="profesorID" />
           <ScalarProperty Name="predmetID" ColumnName="predmetID" />
-          <ScalarProperty Name="korisnikID" ColumnName="korisnikID" />
           <ScalarProperty Name="profesorPredmetID" ColumnName="profesorPredmetID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -123,5 +122,14 @@
     <FunctionImportMapping FunctionImportName="Register" FunctionName="UniverzitetModel.Store.Register" />
     <FunctionImportMapping FunctionImportName="RegisterProfesori" FunctionName="UniverzitetModel.Store.RegisterProfesori" />
     <FunctionImportMapping FunctionImportName="RegisterStudent" FunctionName="UniverzitetModel.Store.RegisterStudent" />
+    <FunctionImportMapping FunctionImportName="prikazi_spisak_predmeta_studenta" FunctionName="UniverzitetModel.Store.prikazi_spisak_predmeta_studenta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_spisak_predmeta_studenta_Result">
+          <ScalarProperty Name="predmetID" ColumnName="predmetID" />
+          <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+          <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

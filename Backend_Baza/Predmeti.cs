@@ -24,11 +24,9 @@ namespace Backend_Baza
         public int predmetID { get; set; }
         public string nazivPredmeta { get; set; }
         public string sifraPredmeta { get; set; }
-        public int profesorID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ocjene> Ocjenes { get; set; }
-        public virtual Profesori Profesori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfesoriPredmeti> ProfesoriPredmetis { get; set; }
     }

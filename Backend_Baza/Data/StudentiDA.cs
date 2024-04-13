@@ -13,5 +13,10 @@ namespace Backend_Baza.Data
             Connections.datamodel.RegisterStudent(student.imeStudenta, student.prezimeStudenta, student.datumRodjenjaStudenta,
                 student.gradID, student.emailStudenta, student.indexStudenta);
         }
+        
+        public static List<prikazi_spisak_predmeta_studenta_Result> getPredmete()
+        {
+            return Connections.datamodel.prikazi_spisak_predmeta_studenta().ToList();
+        }
     }
 }

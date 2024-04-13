@@ -54,89 +54,92 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Data\Account.cs" />
     <Compile Include="Data\Connections.cs" />
     <Compile Include="Data\KorisniciDA.cs" />
     <Compile Include="Data\ProfesoriDA.cs" />
     <Compile Include="Data\StudentiDA.cs" />
     <Compile Include="Drzave.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Gradovi.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Korisnici.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Login_Result.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Ocjene.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Predmeti.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="prikazi_podatke_profesora_Result.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prikazi_spisak_predmeta_studenta_Result.cs">
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="prikaz_gradova_cmbx_Result.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="prikaz_ocjena_predmeta_ucenika_po_korisnikID_Result.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Profesori.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProfesoriPredmeti.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Studenti.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DataModel.edmx">
+    <EntityDeploy Include="EntityDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>EntityDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <None Include="EntityDataModel.edmx.diagram">
+      <DependentUpon>EntityDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="EntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>EntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>EntityDataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -8,6 +8,6 @@ namespace Backend_Baza.Data
 {
     public class Connections
     {
-        public static UniverzitetEntities datamodel = new UniverzitetEntities();
+        public static UniversityEntities datamodel = new UniversityEntities();
     }
 }

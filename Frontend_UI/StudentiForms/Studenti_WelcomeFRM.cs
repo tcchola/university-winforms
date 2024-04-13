@@ -1,4 +1,6 @@
-﻿using Frontend_UI.StudentiForms;
+﻿using Backend_Baza;
+using Frontend_UI.StudentiForms;
+using Frontend_UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,12 @@ namespace Frontend_UI.Ucenici
 {
     public partial class Studenti_WelcomeFRM : Form
     {
-        public Studenti_WelcomeFRM()
+        public Studenti_WelcomeFRM(double pros, string username)
         {
             InitializeComponent();
+
+            lblProsjek.Text = pros.ToString();
+            lblUsername.Text = username;
         }
 
         private void Studenti_WelcomeFRM_Load(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace Backend_Baza
         public Profesori()
         {
             this.Ocjenes = new HashSet<Ocjene>();
-            this.Predmetis = new HashSet<Predmeti>();
+            this.ProfesoriPredmetis = new HashSet<ProfesoriPredmeti>();
         }
     
         public int profesorID { get; set; }
@@ -33,6 +33,6 @@ namespace Backend_Baza
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ocjene> Ocjenes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Predmeti> Predmetis { get; set; }
+        public virtual ICollection<ProfesoriPredmeti> ProfesoriPredmetis { get; set; }
     }
 }
