@@ -13,5 +13,10 @@ namespace Backend_Baza.Data
             Connections.datamodel.RegisterProfesori(prof.imeProfesora, prof.prezimeProfesora, prof.datumRodjenjaProfesora,
                 prof.gradID, prof.emailProfesora, prof.zvanjeProfesora);
         }
+        
+        public static List<prof_ocjenjivanja_Result> getOcjeneProf(int profID)
+        {
+            return Connections.datamodel.prof_ocjenjivanja(profID).ToList();
+        }
     }
 }

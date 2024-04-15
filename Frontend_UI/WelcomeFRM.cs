@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend_Baza;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Frontend_UI
 {
     public partial class WelcomeFRM : Form
     {
+        //Studenti welcomeStudent = new Studenti();
+
         public WelcomeFRM()
         {
             InitializeComponent();
@@ -20,7 +23,7 @@ namespace Frontend_UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginFRM loginForm = new LoginFRM(0);
+            LoginFRM loginForm = new LoginFRM(0,0);
             loginForm.Show();
         }
 
@@ -29,6 +32,11 @@ namespace Frontend_UI
             this.Hide();
             RegisterFRM registerFRM = new RegisterFRM();
             registerFRM.Show();
+        }
+
+        private void WelcomeFRM_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

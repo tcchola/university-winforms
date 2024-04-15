@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Studenti_WelcomeFRM));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.studentiMenu = new System.Windows.Forms.MenuStrip();
-            this.mojProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledProfilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmijeniPodatkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.predmetiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledPredmetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izracunajProsjekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +60,6 @@
             // 
             this.studentiMenu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mojProfilToolStripMenuItem,
             this.predmetiToolStripMenuItem,
             this.izracunajProsjekToolStripMenuItem,
             this.logoutToolStripMenuItem});
@@ -71,31 +67,6 @@
             this.studentiMenu.Name = "studentiMenu";
             this.studentiMenu.Size = new System.Drawing.Size(501, 27);
             this.studentiMenu.TabIndex = 11;
-            // 
-            // mojProfilToolStripMenuItem
-            // 
-            this.mojProfilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pregledProfilaToolStripMenuItem,
-            this.izmijeniPodatkeToolStripMenuItem});
-            this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
-            this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
-            this.mojProfilToolStripMenuItem.Text = "Moj Profil";
-            // 
-            // pregledProfilaToolStripMenuItem
-            // 
-            this.pregledProfilaToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
-            this.pregledProfilaToolStripMenuItem.Name = "pregledProfilaToolStripMenuItem";
-            this.pregledProfilaToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
-            this.pregledProfilaToolStripMenuItem.Text = "Pregled profila";
-            this.pregledProfilaToolStripMenuItem.Click += new System.EventHandler(this.pregledProfilaToolStripMenuItem_Click);
-            // 
-            // izmijeniPodatkeToolStripMenuItem
-            // 
-            this.izmijeniPodatkeToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
-            this.izmijeniPodatkeToolStripMenuItem.Name = "izmijeniPodatkeToolStripMenuItem";
-            this.izmijeniPodatkeToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
-            this.izmijeniPodatkeToolStripMenuItem.Text = "Izmijeni podatke";
-            this.izmijeniPodatkeToolStripMenuItem.Click += new System.EventHandler(this.izmijeniPodatkeToolStripMenuItem_Click);
             // 
             // predmetiToolStripMenuItem
             // 
@@ -131,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 69);
+            this.label1.Location = new System.Drawing.Point(12, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 38);
             this.label1.TabIndex = 12;
@@ -141,7 +112,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Roboto Thin", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(200, 79);
+            this.lblUsername.Location = new System.Drawing.Point(200, 83);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(105, 25);
             this.lblUsername.TabIndex = 13;
@@ -151,7 +122,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Thin", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(78, 158);
+            this.label6.Location = new System.Drawing.Point(78, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 33);
             this.label6.TabIndex = 18;
@@ -161,7 +132,7 @@
             // 
             this.lblProsjek.AutoSize = true;
             this.lblProsjek.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProsjek.Location = new System.Drawing.Point(79, 191);
+            this.lblProsjek.Location = new System.Drawing.Point(79, 193);
             this.lblProsjek.Name = "lblProsjek";
             this.lblProsjek.Size = new System.Drawing.Size(42, 25);
             this.lblProsjek.TabIndex = 17;
@@ -214,9 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem predmetiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledPredmetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izracunajProsjekToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mojProfilToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pregledProfilaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem izmijeniPodatkeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsername;

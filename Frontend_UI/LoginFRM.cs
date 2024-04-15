@@ -17,12 +17,15 @@ namespace Frontend_UI
     public partial class LoginFRM : Form
     {
         Korisnici korisnik = new Korisnici();
+        Backend_Baza.Profesori prof = new Backend_Baza.Profesori();
         int studentID;
+        int profID;
 
-        public LoginFRM(int studentID)
+        public LoginFRM(int studentID, int profID)
         {
             InitializeComponent();
             this.studentID = studentID;
+            this.profID = profID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,13 +52,13 @@ namespace Frontend_UI
                     {
                         if (korisnik.isProfesor == true)
                         {
-                            Profesori_WelcomeFRM profesori_WelcomeFRM = new Profesori_WelcomeFRM();
+                            Profesori_WelcomeFRM profesori_WelcomeFRM = new Profesori_WelcomeFRM(profID, korisnik.username);
                             profesori_WelcomeFRM.Show();
                             this.Close();
                         }
                         else if (korisnik.isProfesor == false)
                         {
-                            Studenti_WelcomeFRM studenti_WelcomeFRM = new Studenti_WelcomeFRM(0, korisnik.username, studentID);
+                            Studenti_WelcomeFRM studenti_WelcomeFRM = new Studenti_WelcomeFRM(0, korisnik.username);
                             studenti_WelcomeFRM.Show();
                             this.Close();
                         }

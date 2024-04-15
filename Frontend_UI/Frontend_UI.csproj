@@ -62,29 +62,29 @@
     <Compile Include="LoginFRM.Designer.cs">
       <DependentUpon>LoginFRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfesoriForms\Profesori_OcjenjivanjaFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfesoriForms\Profesori_OcjenjivanjaFRM.Designer.cs">
+      <DependentUpon>Profesori_OcjenjivanjaFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfesoriForms\Profesori_PredmetiFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfesoriForms\Profesori_PredmetiFRM.Designer.cs">
+      <DependentUpon>Profesori_PredmetiFRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterFRM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegisterFRM.Designer.cs">
       <DependentUpon>RegisterFRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.Designer.cs">
-      <DependentUpon>Studenti_Izmijeni_ProfilFRM.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentiForms\Studenti_Pregled_PredmetaFRM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentiForms\Studenti_Pregled_PredmetaFRM.Designer.cs">
       <DependentUpon>Studenti_Pregled_PredmetaFRM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StudentiForms\Studenti_Pregled_ProfilaFRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentiForms\Studenti_Pregled_ProfilaFRM.Designer.cs">
-      <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.cs">
       <SubType>Form</SubType>
@@ -115,20 +115,17 @@
     <EmbeddedResource Include="LoginFRM.resx">
       <DependentUpon>LoginFRM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProfesoriForms\Profesori_OcjenjivanjaFRM.resx">
+      <DependentUpon>Profesori_OcjenjivanjaFRM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProfesoriForms\Profesori_WelcomeFRM.resx">
       <DependentUpon>Profesori_WelcomeFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterFRM.resx">
       <DependentUpon>RegisterFRM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentiForms\Studenti_Izmijeni_ProfilFRM.resx">
-      <DependentUpon>Studenti_Izmijeni_ProfilFRM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_Pregled_PredmetaFRM.resx">
       <DependentUpon>Studenti_Pregled_PredmetaFRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentiForms\Studenti_Pregled_ProfilaFRM.resx">
-      <DependentUpon>Studenti_Pregled_ProfilaFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentiForms\Studenti_Prosjek_KalkulatorFRM.resx">
       <DependentUpon>Studenti_Prosjek_KalkulatorFRM.cs</DependentUpon>

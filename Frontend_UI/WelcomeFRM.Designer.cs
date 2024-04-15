@@ -120,6 +120,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Univerzitet - Welcome";
+            this.Load += new System.EventHandler(this.WelcomeFRM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

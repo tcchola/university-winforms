@@ -284,8 +284,8 @@
       <Parameter Name="index" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="prikazi_spisak_predmeta_studenta" ReturnType="Collection(UniverzitetModel.prikazi_spisak_predmeta_studenta_Result)" />
-    <FunctionImport Name="prikaz_ocjena_predmeta_ucenika_po_studentID" ReturnType="Collection(UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_studentID_Result)">
-      <Parameter Name="studentID" Mode="In" Type="Int32" />
+    <FunctionImport Name="prof_ocjenjivanja" ReturnType="Collection(UniverzitetModel.prof_ocjenjivanja_Result)">
+      <Parameter Name="profID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Login_Result">
@@ -314,10 +314,10 @@
     <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="sifraPredmeta" Nullable="false" MaxLength="10" />
   </ComplexType>
-  <ComplexType Name="prikaz_ocjena_predmeta_ucenika_po_studentID_Result">
+  <ComplexType Name="prof_ocjenjivanja_Result">
     <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="ocjena" Nullable="false" />
-    <Property Type="DateTime" Name="datumOcjene" Nullable="false" Precision="23" />
-    <Property Type="Int32" Name="prosjek" Nullable="true" />
+    <Property Type="String" Name="datum" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="student" Nullable="false" MaxLength="101" />
   </ComplexType>
 </Schema>

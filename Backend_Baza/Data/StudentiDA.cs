@@ -18,10 +18,5 @@ namespace Backend_Baza.Data
         {
             return Connections.datamodel.prikazi_spisak_predmeta_studenta().ToList();
         }
-
-        public static List<prikaz_ocjena_predmeta_ucenika_po_studentID_Result> getOcjene(int studentID)
-        {
-            return Connections.datamodel.prikaz_ocjena_predmeta_ucenika_po_studentID(studentID).ToList();
-        }
     }
 }

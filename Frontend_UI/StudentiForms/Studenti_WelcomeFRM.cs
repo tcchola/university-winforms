@@ -11,12 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backend_Baza.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Reflection;
 
 namespace Frontend_UI.Ucenici
 {
     public partial class Studenti_WelcomeFRM : Form
     {
-        int studentID;
+        int studentID = 0;
 
         public Studenti_WelcomeFRM(double pros, string username)
         {
@@ -28,19 +30,6 @@ namespace Frontend_UI.Ucenici
         private void Studenti_WelcomeFRM_Load(object sender, EventArgs e)
         {
 
-        }
-        private void pregledProfilaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Studenti_Pregled_ProfilaFRM pregledFRM = new Studenti_Pregled_ProfilaFRM();
-            pregledFRM.Show();
-        }
-
-        private void izmijeniPodatkeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Studenti_Izmijeni_ProfilFRM izmijeniFRM = new Studenti_Izmijeni_ProfilFRM();
-            izmijeniFRM.Show();
         }
 
         private void pregledPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,7 +49,7 @@ namespace Frontend_UI.Ucenici
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginFRM login = new LoginFRM(studentID);
+            LoginFRM login = new LoginFRM(studentID,0);
             login.Show();
         }
     }

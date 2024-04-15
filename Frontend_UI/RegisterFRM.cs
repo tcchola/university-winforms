@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backend_Baza;
 using Backend_Baza.Data;
+using Frontend_UI.StudentiForms;
 using Frontend_UI.Ucenici;
 
 namespace Frontend_UI
@@ -16,9 +17,10 @@ namespace Frontend_UI
     public partial class RegisterFRM : Form
     {
         Korisnici korisnik = new Korisnici();                                   // globalni objekat korisnika za registraciju
-        Backend_Baza.Profesori prof = new Backend_Baza.Profesori();
         Studenti student = new Studenti();
-        int stID;
+        Backend_Baza.Profesori prof = new Backend_Baza.Profesori();
+        int studentID;
+        int profID;
 
         public RegisterFRM()
         {
@@ -49,6 +51,7 @@ namespace Frontend_UI
             prof.zvanjeProfesora = txtProfTitle.Text;
 
             ProfesoriDA.RegisterNewProfessor(prof);
+            profID = prof.profesorID;
         }
         
         private void RegisterNewStudent()
@@ -61,7 +64,7 @@ namespace Frontend_UI
             student.indexStudenta = txtIndex.Text;
 
             StudentiDA.RegisterNewStudent(student);
-            stID = student.studentID;
+            studentID = student.studentID;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -93,7 +96,7 @@ namespace Frontend_UI
                 else if (chkProfessor.Checked == false)                         // ako je korisnik registrovan kao student unosimo te podatke u Studenti tabelu
                     RegisterNewStudent();
                 
-                LoginFRM login = new LoginFRM(stID);
+                LoginFRM login = new LoginFRM(studentID, profID);
                 login.Show();
                 this.Close();
             }

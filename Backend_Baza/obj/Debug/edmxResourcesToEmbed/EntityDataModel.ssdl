@@ -193,11 +193,11 @@
     <Parameter Name="pssw" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="prikaz_gradova_cmbx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="prikaz_ocjena_predmeta_ucenika_po_studentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="studentID" Type="int" Mode="In" />
-  </Function>
   <Function Name="prikazi_podatke_profesora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="prikazi_spisak_predmeta_studenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="prof_ocjenjivanja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="profID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Register" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ime" Type="nvarchar" Mode="In" />
     <Parameter Name="prezime" Type="nvarchar" Mode="In" />

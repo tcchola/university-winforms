@@ -120,13 +120,13 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="prikaz_ocjena_predmeta_ucenika_po_studentID" FunctionName="UniverzitetModel.Store.prikaz_ocjena_predmeta_ucenika_po_studentID">
+    <FunctionImportMapping FunctionImportName="prof_ocjenjivanja" FunctionName="UniverzitetModel.Store.prof_ocjenjivanja">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="UniverzitetModel.prikaz_ocjena_predmeta_ucenika_po_studentID_Result">
+        <ComplexTypeMapping TypeName="UniverzitetModel.prof_ocjenjivanja_Result">
           <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
           <ScalarProperty Name="ocjena" ColumnName="ocjena" />
-          <ScalarProperty Name="datumOcjene" ColumnName="datumOcjene" />
-          <ScalarProperty Name="prosjek" ColumnName="prosjek" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="student" ColumnName="student" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

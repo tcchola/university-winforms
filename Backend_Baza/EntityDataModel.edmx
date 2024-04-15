@@ -200,6 +200,9 @@
         <Function Name="prikaz_gradova_cmbx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="prikazi_podatke_profesora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="prikazi_spisak_predmeta_studenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="prof_ocjenjivanja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="profID" Type="int" Mode="In" />
+        </Function>
         <Function Name="Register" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ime" Type="nvarchar" Mode="In" />
           <Parameter Name="prezime" Type="nvarchar" Mode="In" />
@@ -560,6 +563,9 @@
             <Parameter Name="index" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="prikazi_spisak_predmeta_studenta" ReturnType="Collection(UniverzitetModel.prikazi_spisak_predmeta_studenta_Result)" />
+          <FunctionImport Name="prof_ocjenjivanja" ReturnType="Collection(UniverzitetModel.prof_ocjenjivanja_Result)">
+            <Parameter Name="profID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Login_Result">
           <Property Type="Int32" Name="korisnikID" Nullable="false" />
@@ -586,6 +592,12 @@
         <ComplexType Name="prikazi_spisak_predmeta_studenta_Result">
           <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="sifraPredmeta" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="prof_ocjenjivanja_Result">
+          <Property Type="String" Name="nazivPredmeta" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="ocjena" Nullable="false" />
+          <Property Type="String" Name="datum" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="student" Nullable="false" MaxLength="101" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -710,6 +722,16 @@
               <ComplexTypeMapping TypeName="UniverzitetModel.prikazi_spisak_predmeta_studenta_Result">
                 <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
                 <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prof_ocjenjivanja" FunctionName="UniverzitetModel.Store.prof_ocjenjivanja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UniverzitetModel.prof_ocjenjivanja_Result">
+                <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+                <ScalarProperty Name="ocjena" ColumnName="ocjena" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="student" ColumnName="student" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
