@@ -34,6 +34,8 @@
             this.ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.student = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,9 +48,9 @@
             this.ocjena,
             this.datum,
             this.student});
-            this.dataGridView1.Location = new System.Drawing.Point(84, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 65);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(641, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(471, 283);
             this.dataGridView1.TabIndex = 0;
             // 
             // ocjenaID
@@ -82,17 +84,42 @@
             this.student.HeaderText = "Student";
             this.student.Name = "student";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(-1, -1);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(30, 30);
+            this.btnBack.TabIndex = 32;
+            this.btnBack.Text = "<";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(270, 19);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Pregledajte kakve ste ocjene davali:";
+            // 
             // Profesori_OcjenjivanjaFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(539, 371);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Profesori_OcjenjivanjaFRM";
             this.Text = "Profesori_OcjenjivanjaFRM";
             this.Load += new System.EventHandler(this.Profesori_OcjenjivanjaFRM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,5 +131,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ocjena;
         private System.Windows.Forms.DataGridViewTextBoxColumn datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn student;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label1;
     }
 }

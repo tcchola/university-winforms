@@ -172,13 +172,14 @@ namespace Backend_Baza
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prikazi_spisak_predmeta_studenta_Result>("prikazi_spisak_predmeta_studenta");
         }
     
-        public virtual ObjectResult<prof_ocjenjivanja_Result> prof_ocjenjivanja(Nullable<int> profID)
+        public virtual ObjectResult<prof_ocjenjivanja_Result> prof_ocjenjivanja()
         {
-            var profIDParameter = profID.HasValue ?
-                new ObjectParameter("profID", profID) :
-                new ObjectParameter("profID", typeof(int));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prof_ocjenjivanja_Result>("prof_ocjenjivanja");
+        }
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prof_ocjenjivanja_Result>("prof_ocjenjivanja", profIDParameter);
+        public virtual ObjectResult<prof_predmeti_Result> prof_predmeti()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prof_predmeti_Result>("prof_predmeti");
         }
     }
 }

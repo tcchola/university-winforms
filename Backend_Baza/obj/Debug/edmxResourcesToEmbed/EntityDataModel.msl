@@ -130,5 +130,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="prof_predmeti" FunctionName="UniverzitetModel.Store.prof_predmeti">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UniverzitetModel.prof_predmeti_Result">
+          <ScalarProperty Name="predmetID" ColumnName="predmetID" />
+          <ScalarProperty Name="nazivPredmeta" ColumnName="nazivPredmeta" />
+          <ScalarProperty Name="sifraPredmeta" ColumnName="sifraPredmeta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

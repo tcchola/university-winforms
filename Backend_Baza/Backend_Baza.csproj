@@ -110,6 +110,9 @@
     <Compile Include="prof_ocjenjivanja_Result.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="prof_predmeti_Result.cs">
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Studenti.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>

@@ -19,13 +19,11 @@ namespace Frontend_UI
         Korisnici korisnik = new Korisnici();
         Backend_Baza.Profesori prof = new Backend_Baza.Profesori();
         int studentID;
-        int profID;
 
         public LoginFRM(int studentID, int profID)
         {
             InitializeComponent();
             this.studentID = studentID;
-            this.profID = profID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,7 +50,7 @@ namespace Frontend_UI
                     {
                         if (korisnik.isProfesor == true)
                         {
-                            Profesori_WelcomeFRM profesori_WelcomeFRM = new Profesori_WelcomeFRM(profID, korisnik.username);
+                            Profesori_WelcomeFRM profesori_WelcomeFRM = new Profesori_WelcomeFRM(korisnik.username);
                             profesori_WelcomeFRM.Show();
                             this.Close();
                         }

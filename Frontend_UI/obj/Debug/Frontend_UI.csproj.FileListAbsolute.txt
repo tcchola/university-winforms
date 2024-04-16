@@ -23,3 +23,4 @@ C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\F
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Prosjek_KalkulatorFRM.resources
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.StudentiForms.Studenti_Pregled_PredmetaFRM.resources
 C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.ProfesoriForms.Profesori_OcjenjivanjaFRM.resources
+C:\Users\Tarik\Desktop\TarikColicProgramiranjeSeminarski\Frontend_UI\obj\Debug\Frontend_UI.ProfesoriForms.Profesori_PredmetiFRM.resources

@@ -14,9 +14,14 @@ namespace Backend_Baza.Data
                 prof.gradID, prof.emailProfesora, prof.zvanjeProfesora);
         }
         
-        public static List<prof_ocjenjivanja_Result> getOcjeneProf(int profID)
+        public static List<prof_ocjenjivanja_Result> getOcjeneProf()
         {
-            return Connections.datamodel.prof_ocjenjivanja(profID).ToList();
+            return Connections.datamodel.prof_ocjenjivanja().ToList();
+        }
+
+        public static List<prof_predmeti_Result> getPredmeteProf()
+        {
+            return Connections.datamodel.prof_predmeti().ToList();
         }
     }
 }

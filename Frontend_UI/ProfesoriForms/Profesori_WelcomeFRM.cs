@@ -16,11 +16,10 @@ namespace Frontend_UI.Profesori
     {
         Backend_Baza.Profesori prof = new Backend_Baza.Profesori();
 
-        public Profesori_WelcomeFRM(int profID, string username)
+        public Profesori_WelcomeFRM(string username)
         {
             InitializeComponent();
 
-            prof.profesorID = profID;
             lblUsername.Text = username;
         }
 
@@ -38,12 +37,14 @@ namespace Frontend_UI.Profesori
 
         private void pregledPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Profesori_PredmetiFRM profPredmeti = new Profesori_PredmetiFRM();
+            profPredmeti.Show();
+            this.Hide();
         }
 
         private void prikaziMojeOcjeneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Profesori_OcjenjivanjaFRM ocjn = new Profesori_OcjenjivanjaFRM(prof.profesorID);
+            Profesori_OcjenjivanjaFRM ocjn = new Profesori_OcjenjivanjaFRM();
             ocjn.Show();
             this.Hide();
         }

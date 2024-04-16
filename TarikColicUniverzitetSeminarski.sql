@@ -140,12 +140,15 @@ AS BEGIN
 	JOIN Gradovi as g on prof.gradID=g.gradID
 END
 
-CREATE PROCEDURE prof_ocjenjivanja
-@profID int
+alter PROCEDURE prof_ocjenjivanja
 AS BEGIN
 	select p.nazivPredmeta, o.ocjena, FORMAT(o.datumOcjene, 'dd. MM. yyyy.') as 'datum', s.imeStudenta+' '+s.prezimeStudenta as 'student'
 	from Ocjene as o
 	join Predmeti as p on o.predmetID=p.predmetID
 	join Studenti as s on o.studentID=s.studentID
-	where profesorID=@profID
 END
+
+create procedure prof_predmeti
+as begin
+	select * from Predmeti as p
+end
