@@ -36,7 +36,7 @@ namespace Frontend_UI
             korisnik.pssw = txtPassword.Text;
             korisnik.datumRodjenja = dtpBirth.Value;
             korisnik.isProfesor = chkProfessor.Checked;
-            korisnik.gradID = cmbxGrad.SelectedIndex;
+            korisnik.gradID = Convert.ToInt32(cmbxGrad.SelectedValue);
 
             Account.CreateNewUser(korisnik);
         }
@@ -46,7 +46,7 @@ namespace Frontend_UI
             prof.imeProfesora = txtFirstName.Text;
             prof.prezimeProfesora = txtLastName.Text;
             prof.datumRodjenjaProfesora = dtpBirth.Value;
-            prof.gradID = Convert.ToInt32(cmbxGrad.SelectedIndex);
+            prof.gradID = Convert.ToInt32(cmbxGrad.SelectedValue);
             prof.emailProfesora = txtEmail.Text;
             prof.zvanjeProfesora = txtProfTitle.Text;
 

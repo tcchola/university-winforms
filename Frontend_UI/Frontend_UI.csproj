@@ -170,8 +170,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="assets\pfp.jpeg" />
-    <Content Include="assets\profbg.jpg" />
     <Content Include="assets\profBg.png" />
     <Content Include="assets\professor.png" />
     <Content Include="assets\student.png" />
